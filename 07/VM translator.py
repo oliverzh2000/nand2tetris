@@ -93,26 +93,6 @@ A=M
 M=D
 """
 
-# Flow control commands.
-label = """\
-({})
-"""
-
-goto = """\
-@({})
-0;JMP
-"""
-
-if_goto = """\
-@SP
-A=M
-D=M+1
-@($.{dynamic_label})
-D;JNE
-@({jump_label})
-0;JMP
-@$.{dynamic_label}
-"""
 
 command_translation = {"and": "and_", "or": "or_", "not": "not_"}
 segment_translation = {"local": "LCL", "argument": "ARG", "this": "THIS", "that": "THAT"}
@@ -154,44 +134,11 @@ def get_asm(command, segment=None, index=None, label=None, filename=None):
         pass
 
 
-in_path = "MemoryAccess/StaticTest/StaticTest.vm"
+in_path = "MemoryAccess/PointerTest/PointerTest.vm"
 in_filename = in_path.split("/")[-1].rstrip(".vm")
 out_path = in_path.rstrip(".vm") + ".asm"
 
 with open(in_path) as in_file:
-    # dynamic_label = 0
-    # in_file = list(filter(None,
-    #                       [line.split("//")[0] for line in in_file.read().splitlines()]))
-    # out_file = open(out_path, "w")
-    # dynamic_label = 0
-    # for command in in_file:
-    #     print("// " + command, file=out_file)
-    #     if len(command.split()) == 1:
-    #         if command in ("add", "sub", "neg"):
-    #             print(eval(command), file=out_file)
-    #         elif command in ("and", "or", "not"):
-    #             command = command_translation[command]
-    #             print(eval(command), file=out_file)
-    #         elif command in ("eq", "gt", "lt"):
-    #             print(eval(command).format(dynamic_label=dynamic_label), file=out_file)
-    #             dynamic_label += 1
-    #
-    #     if len(command.split()) == 2:
-    #         if command in ("goto", "label")
-    #
-    #     elif len(command.split()) == 3:
-    #         command_type, segment, index = command.split()
-    #         if segment == "constant":
-    #             print(push_constant.format(value=index), file=out_file)
-    #         elif segment in ("local", "argument", "this", "that"):
-    #             segment = segment_translation[segment]
-    #             print(eval(command_type + "_segment").format(segment=segment, index=index), file=out_file)
-    #         elif segment == "pointer":
-    #             print(eval(command_type + "_address").format(address=3 + int(index)), file=out_file)
-    #         elif segment == "temp":
-    #             print(eval(command_type + "_address").format(address=5 + int(index)), file=out_file)
-    #         elif segment == "static":
-    #             print(eval(command_type + "_address").format(address=in_filename + "." + index), file=out_file)
     in_file = list(filter(None,
                           [line.split("//")[0] for line in in_file.read().splitlines()]))
     out_file = open(out_path, "w")
