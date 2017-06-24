@@ -1,8 +1,9 @@
 # VM to asm translator. June 10 2017. Oliver Zhang.
+import os
 
 # VM to asm translation "skeletons".
-
 # Arithmetic/logical commands.
+
 INC_SP = "@SP  M=M+1"
 
 ADD = "@SP  AM=M-1  D=M  A=A-1  M=M+D"
@@ -47,6 +48,21 @@ CALL = "  ".join((
     # Return address label.
     LABEL.format(label="$RET.{return_label}")
 ))
+RETURN = "  ".join((
+    # FRAME(R14) = LCL.
+    "@LCL  D=M  @R14  M=D",
+    # RET(R15) = *(FRAME(R15) - 5)
+    "@R14  D=M  @5  A=D-A  D=M  @R15  M=D",
+    POP_SEGMENT.format(segment="ARG", index=0),
+    # SP = ARG + 1
+    "@ARG  D=M  @SP  M=D+1",
+    "@R14  D=M  @1  A=D-A  D=M  @THAT  M=D",
+    "@R14  D=M  @2  A=D-A  D=M  @THIS  M=D",
+    "@R14  D=M  @3  A=D-A  D=M  @ARG  M=D",
+    "@R14  D=M  @4  A=D-A  D=M  @LCL  M=D",
+    # GOTO return address.
+    "@R15  A=M  0;JMP",
+))
 FUNCTION = "  ".join((
     LABEL.format(label="${called_fn}"),
     # PUSH 0 n_args times:
@@ -54,19 +70,6 @@ FUNCTION = "  ".join((
     LABEL.format(label="$FUNCTION_INIT.{dynamic_label}"),
     PUSH_CONSTANT.format(value=0),
     "@R13  M=M-1  D=M  @$FUNCTION_INIT.{dynamic_label}  D;JGT"
-))
-RETURN = "  ".join((
-    POP_SEGMENT.format(segment="ARG", index=0),
-    # SP = ARG + 1
-    "@ARG  D=M  @SP  M=D+1",
-    # R13 = LCL.
-    "@LCL  D=M  @R13  M=D",
-    "@R13  D=M  @1  A=D-A  D=M  @THAT  M=D",
-    "@R13  D=M  @2  A=D-A  D=M  @THIS  M=D",
-    "@R13  D=M  @3  A=D-A  D=M  @ARG  M=D",
-    "@R13  D=M  @4  A=D-A  D=M  @LCL  M=D",
-    # GOTO return address.
-    "@R13  D=M  @5  A=D-A  A=M  0;JMP",
 ))
 
 # Bootstrap code.
@@ -124,49 +127,63 @@ def get_asm(command, filename=None, segment=None, index=None, label=None,
             return CALL.format(return_label=return_label, current_fn=current_fn, called_fn=called_fn, n_args=n_args)
         elif command == "function":
             assert n_vars
-            dynamic_label += 1
-            return FUNCTION.format(called_fn=called_fn, dynamic_label=dynamic_label, n_vars=n_vars)
+            if n_vars != "0":
+                dynamic_label += 1
+                return FUNCTION.format(called_fn=called_fn, dynamic_label=dynamic_label, n_vars=n_vars)
+            else:
+                # Functions with no local vars do not need to push anything.
+                return LABEL.format(label="$" + called_fn)
         elif command == "return":
             return RETURN
 
 
-in_path = "FunctionCalls/SimpleFunction/SimpleFunction.vm"
-in_filename = in_path.split("/")[-1].rstrip(".vm")
-out_path = in_path.rstrip(".vm") + ".asm"
+base_dir = "FunctionCalls/StaticsTest/"
+in_paths = [base_dir + file for file in os.listdir(base_dir) if file.endswith(".vm")]
+out_path = base_dir + base_dir.rstrip("/").split("/")[-1] + ".asm"
+out_summary_path = out_path.rstrip(".asm") + "_summary.txt"
 
-with open(in_path) as in_file:
-    in_file = list(filter(None,
-                          [line.split("//")[0] for line in in_file.read().splitlines()]))
-    out_file = open(out_path, "w")
-    # print("// BOOTSTRAP", file=out_file)
-    # print(*BOOTSTRAP.split(), sep="\n", end="\n\n", file=out_file)
-    for VM_function in in_file:
-        print("//", VM_function, file=out_file)
-        asm = None
-        current_fn = None
-        if len(VM_function.split()) == 1:
-            command = VM_function
-            asm = get_asm(command=command)
-        elif len(VM_function.split()) == 2:
-            command, label = VM_function.split()
-            asm = get_asm(command=command, current_fn=current_fn, label=label)
-        elif VM_function.startswith(("push", "pop")):
-            command, segment, index = VM_function.split()
-            asm = get_asm(command=command, filename=in_filename, segment=segment, index=index)
-        elif VM_function.startswith("call"):
-            command, called_fn, n_args = VM_function.split()
-            asm = get_asm(command=command, called_fn=called_fn, n_args=n_args)
-        elif VM_function.startswith("function"):
-            command, called_fn, n_vars = VM_function.split()
-            current_fn = called_fn
-            asm = get_asm(command=command, called_fn=called_fn, n_vars=n_vars)
+print("Files: ")
+print(*in_paths, sep="\n")
+print("Output: ")
+print(out_path)
+print(out_summary_path)
 
+with open(out_path, "w") as out_file, open(out_summary_path, "w") as out_summary_file:
+    line_num = 0
+    print("// BOOTSTRAP", *BOOTSTRAP.split(), sep="\n", end="\n\n", file=out_file)
+    print("BOOTSTRAP".ljust(30), "| LINE", line_num, file=out_summary_file)
+    line_num += len(BOOTSTRAP.split())
 
-        assert asm
-        print(*asm.split(), sep="\n", end="\n\n", file=out_file)
+    for in_path in in_paths:
+        with open(in_path) as in_file:
+            # Comment removal.
+            current_filename = os.path.basename(in_file.name)
+            in_file = filter(None, [line.split("//")[0].strip() for line in in_file.read().splitlines()])
+            current_fn = None
+            for VM_function in in_file:
+                asm = None
+                if len(VM_function.split()) == 1:
+                    command = VM_function
+                    asm = get_asm(command=command)
+                elif len(VM_function.split()) == 2:
+                    command, label = VM_function.split()
+                    asm = get_asm(command=command, current_fn=current_fn, label=label)
+                elif VM_function.startswith(("push", "pop")):
+                    command, segment, index = VM_function.split()
+                    asm = get_asm(command=command, filename=current_filename, segment=segment, index=index)
+                elif VM_function.startswith("call"):
+                    command, called_fn, n_args = VM_function.split()
+                    asm = get_asm(command=command, called_fn=called_fn, n_args=n_args)
+                elif VM_function.startswith("function"):
+                    command, called_fn, n_vars = VM_function.split()
+                    current_fn = called_fn
+                    asm = get_asm(command=command, called_fn=called_fn, n_vars=n_vars)
 
-
-
+                assert asm
+                print("//", VM_function.ljust(30), "| LINE", line_num, file=out_file)
+                print(VM_function.ljust(30), "| LINE", line_num, file=out_summary_file)
+                print(*asm.split(), "\n", sep="\n", file=out_file)
+                line_num += len(asm.split())
 
 
 

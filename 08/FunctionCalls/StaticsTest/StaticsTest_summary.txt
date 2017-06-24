@@ -1,0 +1,38 @@
+BOOTSTRAP                      | LINE 0
+function Class1.set 0          | LINE 54
+push argument 0                | LINE 55
+pop static 0                   | LINE 65
+push argument 1                | LINE 75
+pop static 1                   | LINE 85
+push constant 0                | LINE 95
+return                         | LINE 102
+function Class1.get 0          | LINE 160
+push static 0                  | LINE 161
+push static 1                  | LINE 168
+sub                            | LINE 175
+return                         | LINE 180
+function Class2.set 0          | LINE 238
+push argument 0                | LINE 239
+pop static 0                   | LINE 249
+push argument 1                | LINE 259
+pop static 1                   | LINE 269
+push constant 0                | LINE 279
+return                         | LINE 286
+function Class2.get 0          | LINE 344
+push static 0                  | LINE 345
+push static 1                  | LINE 352
+sub                            | LINE 359
+return                         | LINE 364
+function Sys.init 0            | LINE 422
+push constant 6                | LINE 423
+push constant 8                | LINE 430
+call Class1.set 2              | LINE 437
+pop temp 0                     | LINE 487
+push constant 23               | LINE 497
+push constant 15               | LINE 504
+call Class2.set 2              | LINE 511
+pop temp 0                     | LINE 561
+call Class1.get 0              | LINE 571
+call Class2.get 0              | LINE 621
+label WHILE                    | LINE 671
+goto WHILE                     | LINE 672

@@ -1,0 +1,26 @@
+BOOTSTRAP                      | LINE 0
+function Main.fibonacci 0      | LINE 54
+push argument 0                | LINE 55
+push constant 2                | LINE 65
+lt                             | LINE 72
+if-goto IF_TRUE                | LINE 84
+goto IF_FALSE                  | LINE 89
+label IF_TRUE                  | LINE 91
+push argument 0                | LINE 92
+return                         | LINE 102
+label IF_FALSE                 | LINE 160
+push argument 0                | LINE 161
+push constant 2                | LINE 171
+sub                            | LINE 178
+call Main.fibonacci 1          | LINE 183
+push argument 0                | LINE 233
+push constant 1                | LINE 243
+sub                            | LINE 250
+call Main.fibonacci 1          | LINE 255
+add                            | LINE 305
+return                         | LINE 310
+function Sys.init 0            | LINE 368
+push constant 4                | LINE 369
+call Main.fibonacci 1          | LINE 376
+label WHILE                    | LINE 426
+goto WHILE                     | LINE 427

@@ -1,0 +1,42 @@
+function Sys.init 0            | LINE 0
+push constant 4000             | LINE 1
+pop pointer 0                  | LINE 8
+push constant 5000             | LINE 18
+pop pointer 1                  | LINE 25
+call Sys.main 0                | LINE 35
+pop temp 1                     | LINE 85
+label LOOP                     | LINE 95
+goto LOOP                      | LINE 96
+function Sys.main 5            | LINE 98
+push constant 4001             | LINE 116
+pop pointer 0                  | LINE 123
+push constant 5001             | LINE 133
+pop pointer 1                  | LINE 140
+push constant 200              | LINE 150
+pop local 1                    | LINE 157
+push constant 40               | LINE 169
+pop local 2                    | LINE 176
+push constant 6                | LINE 188
+pop local 3                    | LINE 195
+push constant 123              | LINE 207
+call Sys.add12 1               | LINE 214
+pop temp 0                     | LINE 264
+push local 0                   | LINE 274
+push local 1                   | LINE 284
+push local 2                   | LINE 294
+push local 3                   | LINE 304
+push local 4                   | LINE 314
+add                            | LINE 324
+add                            | LINE 329
+add                            | LINE 334
+add                            | LINE 339
+return                         | LINE 344
+function Sys.add12 0           | LINE 402
+push constant 4002             | LINE 403
+pop pointer 0                  | LINE 410
+push constant 5002             | LINE 420
+pop pointer 1                  | LINE 427
+push argument 0                | LINE 437
+push constant 12               | LINE 447
+add                            | LINE 454
+return                         | LINE 459
