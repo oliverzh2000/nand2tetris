@@ -184,22 +184,4 @@ with open(out_path, "w") as out_file, open(out_summary_path, "w") as out_summary
                 print(VM_function.ljust(30), "| LINE", line_num, file=out_summary_file)
                 print(*asm.split(), "\n", sep="\n", file=out_file)
                 line_num += len(asm.split())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
