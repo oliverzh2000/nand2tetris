@@ -1,0 +1,12 @@
+// This file is part of www.nand2tetris.org
+
+/** Computes the average of a
+sequence of integers. */
+class Main{
+	let i_var=143 ; // comment test.
+    function void main() {
+        var int class_return;
+	do Output.printString("if_else 7=-]~$>\.*    hi");
+	foo.bar(input);
+    }
+}
