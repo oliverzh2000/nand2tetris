@@ -1,4 +1,4 @@
-# nand2tetris-projects
+# nand2tetris
 
 Created Mar 23 2017.
 
