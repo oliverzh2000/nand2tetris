@@ -3,7 +3,6 @@
 import re
 import xml.etree.ElementTree as ET
 from collections import namedtuple
-from xml.dom import minidom
 
 
 class Parser:
