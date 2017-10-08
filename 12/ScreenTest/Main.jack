@@ -17,7 +17,7 @@ class Main {
 
         do Screen.setColor(true);
         do Screen.drawCircle(360,170,3);          // door handle
-        do Screen.drawLine(280,90,345,35);        // roof
+        do   Screen.drawLine(280,90,345,35);        // roof
         do Screen.drawLine(345,35,410,90);        // roof
 
         do Screen.drawCircle(140,60,30);          // sun
