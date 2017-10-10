@@ -1,0 +1,3240 @@
+BOOTSTRAP                      | LINE 0
+function Array.new 0           | LINE 54
+push argument 0                | LINE 55
+call Memory.alloc 1            | LINE 65
+return                         | LINE 115
+function Array.dispose 0       | LINE 173
+push argument 0                | LINE 174
+pop pointer 0                  | LINE 184
+push pointer 0                 | LINE 194
+call Memory.deAlloc 1          | LINE 201
+return                         | LINE 251
+function Keyboard.init 0       | LINE 309
+push constant 24576            | LINE 310
+pop static 0                   | LINE 317
+push constant 0                | LINE 327
+return                         | LINE 334
+function Keyboard.keyPressed 0 | LINE 392
+push static 0                  | LINE 393
+call Memory.peek 1             | LINE 400
+return                         | LINE 450
+function Keyboard.readChar 1   | LINE 508
+push constant 0                | LINE 526
+call Output.printChar 1        | LINE 533
+pop temp 0                     | LINE 583
+label $WHILE.START.0           | LINE 593
+call Keyboard.keyPressed 0     | LINE 594
+not                            | LINE 644
+not                            | LINE 647
+if-goto $WHILE.END.0           | LINE 650
+goto $WHILE.START.0            | LINE 655
+label $WHILE.END.0             | LINE 657
+call Keyboard.keyPressed 0     | LINE 658
+pop local 0                    | LINE 708
+label $WHILE.START.1           | LINE 720
+call Keyboard.keyPressed 0     | LINE 721
+push local 0                   | LINE 771
+eq                             | LINE 781
+not                            | LINE 793
+if-goto $WHILE.END.1           | LINE 796
+goto $WHILE.START.1            | LINE 801
+label $WHILE.END.1             | LINE 803
+call Output.backSpace 0        | LINE 804
+pop temp 0                     | LINE 854
+push local 0                   | LINE 864
+call Output.printChar 1        | LINE 874
+pop temp 0                     | LINE 924
+push local 0                   | LINE 934
+return                         | LINE 944
+function Keyboard.readLine 2   | LINE 1002
+push argument 0                | LINE 1020
+call Output.printString 1      | LINE 1030
+pop temp 0                     | LINE 1080
+push constant 20               | LINE 1090
+call String.new 1              | LINE 1097
+pop local 0                    | LINE 1147
+label $WHILE.START.2           | LINE 1159
+push constant 0                | LINE 1160
+not                            | LINE 1167
+not                            | LINE 1170
+if-goto $WHILE.END.2           | LINE 1173
+call Keyboard.readChar 0       | LINE 1178
+pop local 1                    | LINE 1228
+push local 1                   | LINE 1240
+call String.newLine 0          | LINE 1250
+eq                             | LINE 1300
+not                            | LINE 1312
+if-goto $IF.FALSE.3            | LINE 1315
+call Output.println 0          | LINE 1320
+pop temp 0                     | LINE 1370
+push local 0                   | LINE 1380
+return                         | LINE 1390
+goto $IF.END.3                 | LINE 1448
+label $IF.FALSE.3              | LINE 1450
+push local 1                   | LINE 1451
+call String.backSpace 0        | LINE 1461
+eq                             | LINE 1511
+not                            | LINE 1523
+if-goto $IF.FALSE.4            | LINE 1526
+call Output.backSpace 0        | LINE 1531
+pop temp 0                     | LINE 1581
+push local 0                   | LINE 1591
+call String.eraseLastChar 1    | LINE 1601
+pop temp 0                     | LINE 1651
+goto $IF.END.4                 | LINE 1661
+label $IF.FALSE.4              | LINE 1663
+push local 0                   | LINE 1664
+push local 1                   | LINE 1674
+call String.appendChar 2       | LINE 1684
+pop local 0                    | LINE 1734
+label $IF.END.4                | LINE 1746
+label $IF.END.3                | LINE 1747
+goto $WHILE.START.2            | LINE 1748
+label $WHILE.END.2             | LINE 1750
+function Keyboard.readInt 1    | LINE 1751
+push argument 0                | LINE 1769
+call Keyboard.readLine 1       | LINE 1779
+pop local 0                    | LINE 1829
+push local 0                   | LINE 1841
+call String.intValue 1         | LINE 1851
+return                         | LINE 1901
+function Main.main 0           | LINE 1959
+push constant 11               | LINE 1960
+call String.new 1              | LINE 1967
+push constant 72               | LINE 2017
+call String.appendChar 2       | LINE 2024
+push constant 101              | LINE 2074
+call String.appendChar 2       | LINE 2081
+push constant 108              | LINE 2131
+call String.appendChar 2       | LINE 2138
+push constant 108              | LINE 2188
+call String.appendChar 2       | LINE 2195
+push constant 111              | LINE 2245
+call String.appendChar 2       | LINE 2252
+push constant 32               | LINE 2302
+call String.appendChar 2       | LINE 2309
+push constant 87               | LINE 2359
+call String.appendChar 2       | LINE 2366
+push constant 111              | LINE 2416
+call String.appendChar 2       | LINE 2423
+push constant 114              | LINE 2473
+call String.appendChar 2       | LINE 2480
+push constant 108              | LINE 2530
+call String.appendChar 2       | LINE 2537
+push constant 100              | LINE 2587
+call String.appendChar 2       | LINE 2594
+call Output.print 1            | LINE 2644
+pop temp 0                     | LINE 2694
+push constant 0                | LINE 2704
+return                         | LINE 2711
+function Math.init 0           | LINE 2769
+push constant 16               | LINE 2770
+call Array.new 1               | LINE 2777
+pop static 0                   | LINE 2827
+push constant 16               | LINE 2837
+call Array.new 1               | LINE 2844
+pop static 1                   | LINE 2894
+push static 0                  | LINE 2904
+push constant 0                | LINE 2911
+add                            | LINE 2918
+push constant 1                | LINE 2923
+pop temp 0                     | LINE 2930
+pop pointer 1                  | LINE 2940
+push temp 0                    | LINE 2950
+pop that 0                     | LINE 2957
+push static 0                  | LINE 2969
+push constant 1                | LINE 2976
+add                            | LINE 2983
+push constant 2                | LINE 2988
+pop temp 0                     | LINE 2995
+pop pointer 1                  | LINE 3005
+push temp 0                    | LINE 3015
+pop that 0                     | LINE 3022
+push static 0                  | LINE 3034
+push constant 2                | LINE 3041
+add                            | LINE 3048
+push constant 4                | LINE 3053
+pop temp 0                     | LINE 3060
+pop pointer 1                  | LINE 3070
+push temp 0                    | LINE 3080
+pop that 0                     | LINE 3087
+push static 0                  | LINE 3099
+push constant 3                | LINE 3106
+add                            | LINE 3113
+push constant 8                | LINE 3118
+pop temp 0                     | LINE 3125
+pop pointer 1                  | LINE 3135
+push temp 0                    | LINE 3145
+pop that 0                     | LINE 3152
+push static 0                  | LINE 3164
+push constant 4                | LINE 3171
+add                            | LINE 3178
+push constant 16               | LINE 3183
+pop temp 0                     | LINE 3190
+pop pointer 1                  | LINE 3200
+push temp 0                    | LINE 3210
+pop that 0                     | LINE 3217
+push static 0                  | LINE 3229
+push constant 5                | LINE 3236
+add                            | LINE 3243
+push constant 32               | LINE 3248
+pop temp 0                     | LINE 3255
+pop pointer 1                  | LINE 3265
+push temp 0                    | LINE 3275
+pop that 0                     | LINE 3282
+push static 0                  | LINE 3294
+push constant 6                | LINE 3301
+add                            | LINE 3308
+push constant 64               | LINE 3313
+pop temp 0                     | LINE 3320
+pop pointer 1                  | LINE 3330
+push temp 0                    | LINE 3340
+pop that 0                     | LINE 3347
+push static 0                  | LINE 3359
+push constant 7                | LINE 3366
+add                            | LINE 3373
+push constant 128              | LINE 3378
+pop temp 0                     | LINE 3385
+pop pointer 1                  | LINE 3395
+push temp 0                    | LINE 3405
+pop that 0                     | LINE 3412
+push static 0                  | LINE 3424
+push constant 8                | LINE 3431
+add                            | LINE 3438
+push constant 256              | LINE 3443
+pop temp 0                     | LINE 3450
+pop pointer 1                  | LINE 3460
+push temp 0                    | LINE 3470
+pop that 0                     | LINE 3477
+push static 0                  | LINE 3489
+push constant 9                | LINE 3496
+add                            | LINE 3503
+push constant 512              | LINE 3508
+pop temp 0                     | LINE 3515
+pop pointer 1                  | LINE 3525
+push temp 0                    | LINE 3535
+pop that 0                     | LINE 3542
+push static 0                  | LINE 3554
+push constant 10               | LINE 3561
+add                            | LINE 3568
+push constant 1024             | LINE 3573
+pop temp 0                     | LINE 3580
+pop pointer 1                  | LINE 3590
+push temp 0                    | LINE 3600
+pop that 0                     | LINE 3607
+push static 0                  | LINE 3619
+push constant 11               | LINE 3626
+add                            | LINE 3633
+push constant 2048             | LINE 3638
+pop temp 0                     | LINE 3645
+pop pointer 1                  | LINE 3655
+push temp 0                    | LINE 3665
+pop that 0                     | LINE 3672
+push static 0                  | LINE 3684
+push constant 12               | LINE 3691
+add                            | LINE 3698
+push constant 4096             | LINE 3703
+pop temp 0                     | LINE 3710
+pop pointer 1                  | LINE 3720
+push temp 0                    | LINE 3730
+pop that 0                     | LINE 3737
+push static 0                  | LINE 3749
+push constant 13               | LINE 3756
+add                            | LINE 3763
+push constant 8192             | LINE 3768
+pop temp 0                     | LINE 3775
+pop pointer 1                  | LINE 3785
+push temp 0                    | LINE 3795
+pop that 0                     | LINE 3802
+push static 0                  | LINE 3814
+push constant 14               | LINE 3821
+add                            | LINE 3828
+push constant 16384            | LINE 3833
+pop temp 0                     | LINE 3840
+pop pointer 1                  | LINE 3850
+push temp 0                    | LINE 3860
+pop that 0                     | LINE 3867
+push static 0                  | LINE 3879
+push constant 15               | LINE 3886
+add                            | LINE 3893
+push constant 16384            | LINE 3898
+push constant 16384            | LINE 3905
+add                            | LINE 3912
+pop temp 0                     | LINE 3917
+pop pointer 1                  | LINE 3927
+push temp 0                    | LINE 3937
+pop that 0                     | LINE 3944
+push constant 0                | LINE 3956
+return                         | LINE 3963
+function Math.multiply 2       | LINE 4021
+push constant 0                | LINE 4039
+pop local 1                    | LINE 4046
+label $WHILE.START.0           | LINE 4058
+push local 1                   | LINE 4059
+push constant 16               | LINE 4069
+lt                             | LINE 4076
+not                            | LINE 4088
+if-goto $WHILE.END.0           | LINE 4091
+push argument 1                | LINE 4096
+push static 0                  | LINE 4106
+push local 1                   | LINE 4113
+add                            | LINE 4123
+pop pointer 1                  | LINE 4128
+push that 0                    | LINE 4138
+and                            | LINE 4148
+push constant 0                | LINE 4153
+eq                             | LINE 4160
+not                            | LINE 4172
+not                            | LINE 4175
+if-goto $IF.FALSE.1            | LINE 4178
+push local 0                   | LINE 4183
+push argument 0                | LINE 4193
+add                            | LINE 4203
+pop local 0                    | LINE 4208
+label $IF.FALSE.1              | LINE 4220
+push argument 0                | LINE 4221
+push argument 0                | LINE 4231
+add                            | LINE 4241
+pop argument 0                 | LINE 4246
+push local 1                   | LINE 4258
+push constant 1                | LINE 4268
+add                            | LINE 4275
+pop local 1                    | LINE 4280
+goto $WHILE.START.0            | LINE 4292
+label $WHILE.END.0             | LINE 4294
+push local 0                   | LINE 4295
+return                         | LINE 4305
+function Math.divide 2         | LINE 4363
+push argument 0                | LINE 4381
+push constant 0                | LINE 4391
+lt                             | LINE 4398
+push argument 1                | LINE 4410
+push constant 0                | LINE 4420
+gt                             | LINE 4427
+and                            | LINE 4439
+not                            | LINE 4444
+if-goto $IF.FALSE.2            | LINE 4447
+push argument 0                | LINE 4452
+neg                            | LINE 4462
+push argument 1                | LINE 4465
+call Math.divide 2             | LINE 4475
+neg                            | LINE 4525
+return                         | LINE 4528
+label $IF.FALSE.2              | LINE 4586
+push argument 1                | LINE 4587
+push constant 0                | LINE 4597
+lt                             | LINE 4604
+push argument 0                | LINE 4616
+push constant 0                | LINE 4626
+gt                             | LINE 4633
+and                            | LINE 4645
+not                            | LINE 4650
+if-goto $IF.FALSE.3            | LINE 4653
+push argument 0                | LINE 4658
+push argument 1                | LINE 4668
+neg                            | LINE 4678
+call Math.divide 2             | LINE 4681
+neg                            | LINE 4731
+return                         | LINE 4734
+label $IF.FALSE.3              | LINE 4792
+push argument 1                | LINE 4793
+push constant 0                | LINE 4803
+lt                             | LINE 4810
+push argument 0                | LINE 4822
+push constant 0                | LINE 4832
+lt                             | LINE 4839
+and                            | LINE 4851
+not                            | LINE 4856
+if-goto $IF.FALSE.4            | LINE 4859
+push argument 1                | LINE 4864
+neg                            | LINE 4874
+pop argument 1                 | LINE 4877
+push argument 0                | LINE 4889
+neg                            | LINE 4899
+pop argument 0                 | LINE 4902
+label $IF.FALSE.4              | LINE 4914
+push argument 1                | LINE 4915
+push argument 0                | LINE 4925
+gt                             | LINE 4935
+not                            | LINE 4947
+if-goto $IF.FALSE.5            | LINE 4950
+push constant 0                | LINE 4955
+return                         | LINE 4962
+label $IF.FALSE.5              | LINE 5020
+push argument 0                | LINE 5021
+push argument 1                | LINE 5031
+push argument 1                | LINE 5041
+add                            | LINE 5051
+call Math.divide 2             | LINE 5056
+pop local 1                    | LINE 5106
+push argument 0                | LINE 5118
+push constant 2                | LINE 5128
+push local 1                   | LINE 5135
+call Math.multiply 2           | LINE 5145
+push argument 1                | LINE 5195
+call Math.multiply 2           | LINE 5205
+sub                            | LINE 5255
+push argument 1                | LINE 5260
+lt                             | LINE 5270
+not                            | LINE 5282
+if-goto $IF.FALSE.6            | LINE 5285
+push local 1                   | LINE 5290
+push local 1                   | LINE 5300
+add                            | LINE 5310
+return                         | LINE 5315
+goto $IF.END.6                 | LINE 5373
+label $IF.FALSE.6              | LINE 5375
+push local 1                   | LINE 5376
+push local 1                   | LINE 5386
+add                            | LINE 5396
+push constant 1                | LINE 5401
+add                            | LINE 5408
+return                         | LINE 5413
+label $IF.END.6                | LINE 5471
+function Math.sqrt 3           | LINE 5472
+push constant 7                | LINE 5490
+pop local 0                    | LINE 5497
+push constant 0                | LINE 5509
+pop local 1                    | LINE 5516
+label $WHILE.START.7           | LINE 5528
+push local 0                   | LINE 5529
+push constant 0                | LINE 5539
+lt                             | LINE 5546
+not                            | LINE 5558
+not                            | LINE 5561
+if-goto $WHILE.END.7           | LINE 5564
+push local 1                   | LINE 5569
+push static 0                  | LINE 5579
+push local 0                   | LINE 5586
+add                            | LINE 5596
+pop pointer 1                  | LINE 5601
+push that 0                    | LINE 5611
+add                            | LINE 5621
+push local 1                   | LINE 5626
+push static 0                  | LINE 5636
+push local 0                   | LINE 5643
+add                            | LINE 5653
+pop pointer 1                  | LINE 5658
+push that 0                    | LINE 5668
+add                            | LINE 5678
+call Math.multiply 2           | LINE 5683
+pop local 2                    | LINE 5733
+push local 2                   | LINE 5745
+push argument 0                | LINE 5755
+gt                             | LINE 5765
+not                            | LINE 5777
+push local 2                   | LINE 5780
+push constant 0                | LINE 5790
+gt                             | LINE 5797
+and                            | LINE 5809
+not                            | LINE 5814
+if-goto $IF.FALSE.8            | LINE 5817
+push local 1                   | LINE 5822
+push static 0                  | LINE 5832
+push local 0                   | LINE 5839
+add                            | LINE 5849
+pop pointer 1                  | LINE 5854
+push that 0                    | LINE 5864
+add                            | LINE 5874
+pop local 1                    | LINE 5879
+label $IF.FALSE.8              | LINE 5891
+push local 0                   | LINE 5892
+push constant 1                | LINE 5902
+sub                            | LINE 5909
+pop local 0                    | LINE 5914
+goto $WHILE.START.7            | LINE 5926
+label $WHILE.END.7             | LINE 5928
+push local 1                   | LINE 5929
+return                         | LINE 5939
+function Math.abs 0            | LINE 5997
+push argument 0                | LINE 5998
+push constant 0                | LINE 6008
+lt                             | LINE 6015
+not                            | LINE 6027
+if-goto $IF.FALSE.9            | LINE 6030
+push argument 0                | LINE 6035
+neg                            | LINE 6045
+return                         | LINE 6048
+label $IF.FALSE.9              | LINE 6106
+push argument 0                | LINE 6107
+return                         | LINE 6117
+function Math.max 0            | LINE 6175
+push argument 0                | LINE 6176
+push argument 1                | LINE 6186
+gt                             | LINE 6196
+not                            | LINE 6208
+if-goto $IF.FALSE.10           | LINE 6211
+push argument 0                | LINE 6216
+return                         | LINE 6226
+label $IF.FALSE.10             | LINE 6284
+push argument 1                | LINE 6285
+return                         | LINE 6295
+function Math.min 0            | LINE 6353
+push argument 0                | LINE 6354
+push argument 1                | LINE 6364
+lt                             | LINE 6374
+not                            | LINE 6386
+if-goto $IF.FALSE.11           | LINE 6389
+push argument 0                | LINE 6394
+return                         | LINE 6404
+label $IF.FALSE.11             | LINE 6462
+push argument 1                | LINE 6463
+return                         | LINE 6473
+function Math.mod 0            | LINE 6531
+push argument 0                | LINE 6532
+push argument 0                | LINE 6542
+push argument 1                | LINE 6552
+call Math.divide 2             | LINE 6562
+push argument 1                | LINE 6612
+call Math.multiply 2           | LINE 6622
+sub                            | LINE 6672
+return                         | LINE 6677
+function Memory.init 0         | LINE 6735
+push constant 0                | LINE 6736
+pop static 0                   | LINE 6743
+push constant 2048             | LINE 6753
+pop static 1                   | LINE 6760
+push constant 0                | LINE 6770
+return                         | LINE 6777
+function Memory.peek 0         | LINE 6835
+push static 0                  | LINE 6836
+push argument 0                | LINE 6843
+add                            | LINE 6853
+pop pointer 1                  | LINE 6858
+push that 0                    | LINE 6868
+return                         | LINE 6878
+function Memory.poke 0         | LINE 6936
+push static 0                  | LINE 6937
+push argument 0                | LINE 6944
+add                            | LINE 6954
+push argument 1                | LINE 6959
+pop temp 0                     | LINE 6969
+pop pointer 1                  | LINE 6979
+push temp 0                    | LINE 6989
+pop that 0                     | LINE 6996
+push constant 0                | LINE 7008
+return                         | LINE 7015
+function Memory.alloc 1        | LINE 7073
+push static 1                  | LINE 7091
+pop local 0                    | LINE 7098
+push static 1                  | LINE 7110
+push argument 0                | LINE 7117
+add                            | LINE 7127
+pop static 1                   | LINE 7132
+push local 0                   | LINE 7142
+return                         | LINE 7152
+function Memory.deAlloc 0      | LINE 7210
+push constant 0                | LINE 7211
+return                         | LINE 7218
+function Output.init 0         | LINE 7276
+call Output.initMap 0          | LINE 7277
+pop temp 0                     | LINE 7327
+push constant 16384            | LINE 7337
+pop static 1                   | LINE 7344
+push constant 0                | LINE 7354
+pop static 2                   | LINE 7361
+push constant 0                | LINE 7371
+pop static 3                   | LINE 7378
+push constant 0                | LINE 7388
+return                         | LINE 7395
+function Output.initMap 0      | LINE 7453
+push constant 127              | LINE 7454
+call Array.new 1               | LINE 7461
+pop static 0                   | LINE 7511
+push constant 0                | LINE 7521
+push constant 63               | LINE 7528
+push constant 63               | LINE 7535
+push constant 63               | LINE 7542
+push constant 63               | LINE 7549
+push constant 63               | LINE 7556
+push constant 63               | LINE 7563
+push constant 63               | LINE 7570
+push constant 63               | LINE 7577
+push constant 63               | LINE 7584
+push constant 0                | LINE 7591
+push constant 0                | LINE 7598
+call Output.create 12          | LINE 7605
+pop temp 0                     | LINE 7655
+push constant 32               | LINE 7665
+push constant 0                | LINE 7672
+push constant 0                | LINE 7679
+push constant 0                | LINE 7686
+push constant 0                | LINE 7693
+push constant 0                | LINE 7700
+push constant 0                | LINE 7707
+push constant 0                | LINE 7714
+push constant 0                | LINE 7721
+push constant 0                | LINE 7728
+push constant 0                | LINE 7735
+push constant 0                | LINE 7742
+call Output.create 12          | LINE 7749
+pop temp 0                     | LINE 7799
+push constant 33               | LINE 7809
+push constant 12               | LINE 7816
+push constant 30               | LINE 7823
+push constant 30               | LINE 7830
+push constant 30               | LINE 7837
+push constant 12               | LINE 7844
+push constant 12               | LINE 7851
+push constant 0                | LINE 7858
+push constant 12               | LINE 7865
+push constant 12               | LINE 7872
+push constant 0                | LINE 7879
+push constant 0                | LINE 7886
+call Output.create 12          | LINE 7893
+pop temp 0                     | LINE 7943
+push constant 34               | LINE 7953
+push constant 54               | LINE 7960
+push constant 54               | LINE 7967
+push constant 20               | LINE 7974
+push constant 0                | LINE 7981
+push constant 0                | LINE 7988
+push constant 0                | LINE 7995
+push constant 0                | LINE 8002
+push constant 0                | LINE 8009
+push constant 0                | LINE 8016
+push constant 0                | LINE 8023
+push constant 0                | LINE 8030
+call Output.create 12          | LINE 8037
+pop temp 0                     | LINE 8087
+push constant 35               | LINE 8097
+push constant 0                | LINE 8104
+push constant 18               | LINE 8111
+push constant 18               | LINE 8118
+push constant 63               | LINE 8125
+push constant 18               | LINE 8132
+push constant 18               | LINE 8139
+push constant 63               | LINE 8146
+push constant 18               | LINE 8153
+push constant 18               | LINE 8160
+push constant 0                | LINE 8167
+push constant 0                | LINE 8174
+call Output.create 12          | LINE 8181
+pop temp 0                     | LINE 8231
+push constant 36               | LINE 8241
+push constant 12               | LINE 8248
+push constant 30               | LINE 8255
+push constant 51               | LINE 8262
+push constant 3                | LINE 8269
+push constant 30               | LINE 8276
+push constant 48               | LINE 8283
+push constant 51               | LINE 8290
+push constant 30               | LINE 8297
+push constant 12               | LINE 8304
+push constant 12               | LINE 8311
+push constant 0                | LINE 8318
+call Output.create 12          | LINE 8325
+pop temp 0                     | LINE 8375
+push constant 37               | LINE 8385
+push constant 0                | LINE 8392
+push constant 0                | LINE 8399
+push constant 35               | LINE 8406
+push constant 51               | LINE 8413
+push constant 24               | LINE 8420
+push constant 12               | LINE 8427
+push constant 6                | LINE 8434
+push constant 51               | LINE 8441
+push constant 49               | LINE 8448
+push constant 0                | LINE 8455
+push constant 0                | LINE 8462
+call Output.create 12          | LINE 8469
+pop temp 0                     | LINE 8519
+push constant 38               | LINE 8529
+push constant 12               | LINE 8536
+push constant 30               | LINE 8543
+push constant 30               | LINE 8550
+push constant 12               | LINE 8557
+push constant 54               | LINE 8564
+push constant 27               | LINE 8571
+push constant 27               | LINE 8578
+push constant 27               | LINE 8585
+push constant 54               | LINE 8592
+push constant 0                | LINE 8599
+push constant 0                | LINE 8606
+call Output.create 12          | LINE 8613
+pop temp 0                     | LINE 8663
+push constant 39               | LINE 8673
+push constant 12               | LINE 8680
+push constant 12               | LINE 8687
+push constant 6                | LINE 8694
+push constant 0                | LINE 8701
+push constant 0                | LINE 8708
+push constant 0                | LINE 8715
+push constant 0                | LINE 8722
+push constant 0                | LINE 8729
+push constant 0                | LINE 8736
+push constant 0                | LINE 8743
+push constant 0                | LINE 8750
+call Output.create 12          | LINE 8757
+pop temp 0                     | LINE 8807
+push constant 40               | LINE 8817
+push constant 24               | LINE 8824
+push constant 12               | LINE 8831
+push constant 6                | LINE 8838
+push constant 6                | LINE 8845
+push constant 6                | LINE 8852
+push constant 6                | LINE 8859
+push constant 6                | LINE 8866
+push constant 12               | LINE 8873
+push constant 24               | LINE 8880
+push constant 0                | LINE 8887
+push constant 0                | LINE 8894
+call Output.create 12          | LINE 8901
+pop temp 0                     | LINE 8951
+push constant 41               | LINE 8961
+push constant 6                | LINE 8968
+push constant 12               | LINE 8975
+push constant 24               | LINE 8982
+push constant 24               | LINE 8989
+push constant 24               | LINE 8996
+push constant 24               | LINE 9003
+push constant 24               | LINE 9010
+push constant 12               | LINE 9017
+push constant 6                | LINE 9024
+push constant 0                | LINE 9031
+push constant 0                | LINE 9038
+call Output.create 12          | LINE 9045
+pop temp 0                     | LINE 9095
+push constant 42               | LINE 9105
+push constant 0                | LINE 9112
+push constant 0                | LINE 9119
+push constant 0                | LINE 9126
+push constant 51               | LINE 9133
+push constant 30               | LINE 9140
+push constant 63               | LINE 9147
+push constant 30               | LINE 9154
+push constant 51               | LINE 9161
+push constant 0                | LINE 9168
+push constant 0                | LINE 9175
+push constant 0                | LINE 9182
+call Output.create 12          | LINE 9189
+pop temp 0                     | LINE 9239
+push constant 43               | LINE 9249
+push constant 0                | LINE 9256
+push constant 0                | LINE 9263
+push constant 0                | LINE 9270
+push constant 12               | LINE 9277
+push constant 12               | LINE 9284
+push constant 63               | LINE 9291
+push constant 12               | LINE 9298
+push constant 12               | LINE 9305
+push constant 0                | LINE 9312
+push constant 0                | LINE 9319
+push constant 0                | LINE 9326
+call Output.create 12          | LINE 9333
+pop temp 0                     | LINE 9383
+push constant 44               | LINE 9393
+push constant 0                | LINE 9400
+push constant 0                | LINE 9407
+push constant 0                | LINE 9414
+push constant 0                | LINE 9421
+push constant 0                | LINE 9428
+push constant 0                | LINE 9435
+push constant 0                | LINE 9442
+push constant 12               | LINE 9449
+push constant 12               | LINE 9456
+push constant 6                | LINE 9463
+push constant 0                | LINE 9470
+call Output.create 12          | LINE 9477
+pop temp 0                     | LINE 9527
+push constant 45               | LINE 9537
+push constant 0                | LINE 9544
+push constant 0                | LINE 9551
+push constant 0                | LINE 9558
+push constant 0                | LINE 9565
+push constant 0                | LINE 9572
+push constant 63               | LINE 9579
+push constant 0                | LINE 9586
+push constant 0                | LINE 9593
+push constant 0                | LINE 9600
+push constant 0                | LINE 9607
+push constant 0                | LINE 9614
+call Output.create 12          | LINE 9621
+pop temp 0                     | LINE 9671
+push constant 46               | LINE 9681
+push constant 0                | LINE 9688
+push constant 0                | LINE 9695
+push constant 0                | LINE 9702
+push constant 0                | LINE 9709
+push constant 0                | LINE 9716
+push constant 0                | LINE 9723
+push constant 0                | LINE 9730
+push constant 12               | LINE 9737
+push constant 12               | LINE 9744
+push constant 0                | LINE 9751
+push constant 0                | LINE 9758
+call Output.create 12          | LINE 9765
+pop temp 0                     | LINE 9815
+push constant 47               | LINE 9825
+push constant 0                | LINE 9832
+push constant 0                | LINE 9839
+push constant 32               | LINE 9846
+push constant 48               | LINE 9853
+push constant 24               | LINE 9860
+push constant 12               | LINE 9867
+push constant 6                | LINE 9874
+push constant 3                | LINE 9881
+push constant 1                | LINE 9888
+push constant 0                | LINE 9895
+push constant 0                | LINE 9902
+call Output.create 12          | LINE 9909
+pop temp 0                     | LINE 9959
+push constant 48               | LINE 9969
+push constant 12               | LINE 9976
+push constant 30               | LINE 9983
+push constant 51               | LINE 9990
+push constant 51               | LINE 9997
+push constant 51               | LINE 10004
+push constant 51               | LINE 10011
+push constant 51               | LINE 10018
+push constant 30               | LINE 10025
+push constant 12               | LINE 10032
+push constant 0                | LINE 10039
+push constant 0                | LINE 10046
+call Output.create 12          | LINE 10053
+pop temp 0                     | LINE 10103
+push constant 49               | LINE 10113
+push constant 12               | LINE 10120
+push constant 14               | LINE 10127
+push constant 15               | LINE 10134
+push constant 12               | LINE 10141
+push constant 12               | LINE 10148
+push constant 12               | LINE 10155
+push constant 12               | LINE 10162
+push constant 12               | LINE 10169
+push constant 63               | LINE 10176
+push constant 0                | LINE 10183
+push constant 0                | LINE 10190
+call Output.create 12          | LINE 10197
+pop temp 0                     | LINE 10247
+push constant 50               | LINE 10257
+push constant 30               | LINE 10264
+push constant 51               | LINE 10271
+push constant 48               | LINE 10278
+push constant 24               | LINE 10285
+push constant 12               | LINE 10292
+push constant 6                | LINE 10299
+push constant 3                | LINE 10306
+push constant 51               | LINE 10313
+push constant 63               | LINE 10320
+push constant 0                | LINE 10327
+push constant 0                | LINE 10334
+call Output.create 12          | LINE 10341
+pop temp 0                     | LINE 10391
+push constant 51               | LINE 10401
+push constant 30               | LINE 10408
+push constant 51               | LINE 10415
+push constant 48               | LINE 10422
+push constant 48               | LINE 10429
+push constant 28               | LINE 10436
+push constant 48               | LINE 10443
+push constant 48               | LINE 10450
+push constant 51               | LINE 10457
+push constant 30               | LINE 10464
+push constant 0                | LINE 10471
+push constant 0                | LINE 10478
+call Output.create 12          | LINE 10485
+pop temp 0                     | LINE 10535
+push constant 52               | LINE 10545
+push constant 16               | LINE 10552
+push constant 24               | LINE 10559
+push constant 28               | LINE 10566
+push constant 26               | LINE 10573
+push constant 25               | LINE 10580
+push constant 63               | LINE 10587
+push constant 24               | LINE 10594
+push constant 24               | LINE 10601
+push constant 60               | LINE 10608
+push constant 0                | LINE 10615
+push constant 0                | LINE 10622
+call Output.create 12          | LINE 10629
+pop temp 0                     | LINE 10679
+push constant 53               | LINE 10689
+push constant 63               | LINE 10696
+push constant 3                | LINE 10703
+push constant 3                | LINE 10710
+push constant 31               | LINE 10717
+push constant 48               | LINE 10724
+push constant 48               | LINE 10731
+push constant 48               | LINE 10738
+push constant 51               | LINE 10745
+push constant 30               | LINE 10752
+push constant 0                | LINE 10759
+push constant 0                | LINE 10766
+call Output.create 12          | LINE 10773
+pop temp 0                     | LINE 10823
+push constant 54               | LINE 10833
+push constant 28               | LINE 10840
+push constant 6                | LINE 10847
+push constant 3                | LINE 10854
+push constant 3                | LINE 10861
+push constant 31               | LINE 10868
+push constant 51               | LINE 10875
+push constant 51               | LINE 10882
+push constant 51               | LINE 10889
+push constant 30               | LINE 10896
+push constant 0                | LINE 10903
+push constant 0                | LINE 10910
+call Output.create 12          | LINE 10917
+pop temp 0                     | LINE 10967
+push constant 55               | LINE 10977
+push constant 63               | LINE 10984
+push constant 49               | LINE 10991
+push constant 48               | LINE 10998
+push constant 48               | LINE 11005
+push constant 24               | LINE 11012
+push constant 12               | LINE 11019
+push constant 12               | LINE 11026
+push constant 12               | LINE 11033
+push constant 12               | LINE 11040
+push constant 0                | LINE 11047
+push constant 0                | LINE 11054
+call Output.create 12          | LINE 11061
+pop temp 0                     | LINE 11111
+push constant 56               | LINE 11121
+push constant 30               | LINE 11128
+push constant 51               | LINE 11135
+push constant 51               | LINE 11142
+push constant 51               | LINE 11149
+push constant 30               | LINE 11156
+push constant 51               | LINE 11163
+push constant 51               | LINE 11170
+push constant 51               | LINE 11177
+push constant 30               | LINE 11184
+push constant 0                | LINE 11191
+push constant 0                | LINE 11198
+call Output.create 12          | LINE 11205
+pop temp 0                     | LINE 11255
+push constant 57               | LINE 11265
+push constant 30               | LINE 11272
+push constant 51               | LINE 11279
+push constant 51               | LINE 11286
+push constant 51               | LINE 11293
+push constant 62               | LINE 11300
+push constant 48               | LINE 11307
+push constant 48               | LINE 11314
+push constant 24               | LINE 11321
+push constant 14               | LINE 11328
+push constant 0                | LINE 11335
+push constant 0                | LINE 11342
+call Output.create 12          | LINE 11349
+pop temp 0                     | LINE 11399
+push constant 58               | LINE 11409
+push constant 0                | LINE 11416
+push constant 0                | LINE 11423
+push constant 12               | LINE 11430
+push constant 12               | LINE 11437
+push constant 0                | LINE 11444
+push constant 0                | LINE 11451
+push constant 12               | LINE 11458
+push constant 12               | LINE 11465
+push constant 0                | LINE 11472
+push constant 0                | LINE 11479
+push constant 0                | LINE 11486
+call Output.create 12          | LINE 11493
+pop temp 0                     | LINE 11543
+push constant 59               | LINE 11553
+push constant 0                | LINE 11560
+push constant 0                | LINE 11567
+push constant 12               | LINE 11574
+push constant 12               | LINE 11581
+push constant 0                | LINE 11588
+push constant 0                | LINE 11595
+push constant 12               | LINE 11602
+push constant 12               | LINE 11609
+push constant 6                | LINE 11616
+push constant 0                | LINE 11623
+push constant 0                | LINE 11630
+call Output.create 12          | LINE 11637
+pop temp 0                     | LINE 11687
+push constant 60               | LINE 11697
+push constant 0                | LINE 11704
+push constant 0                | LINE 11711
+push constant 24               | LINE 11718
+push constant 12               | LINE 11725
+push constant 6                | LINE 11732
+push constant 3                | LINE 11739
+push constant 6                | LINE 11746
+push constant 12               | LINE 11753
+push constant 24               | LINE 11760
+push constant 0                | LINE 11767
+push constant 0                | LINE 11774
+call Output.create 12          | LINE 11781
+pop temp 0                     | LINE 11831
+push constant 61               | LINE 11841
+push constant 0                | LINE 11848
+push constant 0                | LINE 11855
+push constant 0                | LINE 11862
+push constant 63               | LINE 11869
+push constant 0                | LINE 11876
+push constant 0                | LINE 11883
+push constant 63               | LINE 11890
+push constant 0                | LINE 11897
+push constant 0                | LINE 11904
+push constant 0                | LINE 11911
+push constant 0                | LINE 11918
+call Output.create 12          | LINE 11925
+pop temp 0                     | LINE 11975
+push constant 62               | LINE 11985
+push constant 0                | LINE 11992
+push constant 0                | LINE 11999
+push constant 3                | LINE 12006
+push constant 6                | LINE 12013
+push constant 12               | LINE 12020
+push constant 24               | LINE 12027
+push constant 12               | LINE 12034
+push constant 6                | LINE 12041
+push constant 3                | LINE 12048
+push constant 0                | LINE 12055
+push constant 0                | LINE 12062
+call Output.create 12          | LINE 12069
+pop temp 0                     | LINE 12119
+push constant 64               | LINE 12129
+push constant 30               | LINE 12136
+push constant 51               | LINE 12143
+push constant 51               | LINE 12150
+push constant 59               | LINE 12157
+push constant 59               | LINE 12164
+push constant 59               | LINE 12171
+push constant 27               | LINE 12178
+push constant 3                | LINE 12185
+push constant 30               | LINE 12192
+push constant 0                | LINE 12199
+push constant 0                | LINE 12206
+call Output.create 12          | LINE 12213
+pop temp 0                     | LINE 12263
+push constant 63               | LINE 12273
+push constant 30               | LINE 12280
+push constant 51               | LINE 12287
+push constant 51               | LINE 12294
+push constant 24               | LINE 12301
+push constant 12               | LINE 12308
+push constant 12               | LINE 12315
+push constant 0                | LINE 12322
+push constant 12               | LINE 12329
+push constant 12               | LINE 12336
+push constant 0                | LINE 12343
+push constant 0                | LINE 12350
+call Output.create 12          | LINE 12357
+pop temp 0                     | LINE 12407
+push constant 65               | LINE 12417
+push constant 12               | LINE 12424
+push constant 30               | LINE 12431
+push constant 51               | LINE 12438
+push constant 51               | LINE 12445
+push constant 63               | LINE 12452
+push constant 51               | LINE 12459
+push constant 51               | LINE 12466
+push constant 51               | LINE 12473
+push constant 51               | LINE 12480
+push constant 0                | LINE 12487
+push constant 0                | LINE 12494
+call Output.create 12          | LINE 12501
+pop temp 0                     | LINE 12551
+push constant 66               | LINE 12561
+push constant 31               | LINE 12568
+push constant 51               | LINE 12575
+push constant 51               | LINE 12582
+push constant 51               | LINE 12589
+push constant 31               | LINE 12596
+push constant 51               | LINE 12603
+push constant 51               | LINE 12610
+push constant 51               | LINE 12617
+push constant 31               | LINE 12624
+push constant 0                | LINE 12631
+push constant 0                | LINE 12638
+call Output.create 12          | LINE 12645
+pop temp 0                     | LINE 12695
+push constant 67               | LINE 12705
+push constant 28               | LINE 12712
+push constant 54               | LINE 12719
+push constant 35               | LINE 12726
+push constant 3                | LINE 12733
+push constant 3                | LINE 12740
+push constant 3                | LINE 12747
+push constant 35               | LINE 12754
+push constant 54               | LINE 12761
+push constant 28               | LINE 12768
+push constant 0                | LINE 12775
+push constant 0                | LINE 12782
+call Output.create 12          | LINE 12789
+pop temp 0                     | LINE 12839
+push constant 68               | LINE 12849
+push constant 15               | LINE 12856
+push constant 27               | LINE 12863
+push constant 51               | LINE 12870
+push constant 51               | LINE 12877
+push constant 51               | LINE 12884
+push constant 51               | LINE 12891
+push constant 51               | LINE 12898
+push constant 27               | LINE 12905
+push constant 15               | LINE 12912
+push constant 0                | LINE 12919
+push constant 0                | LINE 12926
+call Output.create 12          | LINE 12933
+pop temp 0                     | LINE 12983
+push constant 69               | LINE 12993
+push constant 63               | LINE 13000
+push constant 51               | LINE 13007
+push constant 35               | LINE 13014
+push constant 11               | LINE 13021
+push constant 15               | LINE 13028
+push constant 11               | LINE 13035
+push constant 35               | LINE 13042
+push constant 51               | LINE 13049
+push constant 63               | LINE 13056
+push constant 0                | LINE 13063
+push constant 0                | LINE 13070
+call Output.create 12          | LINE 13077
+pop temp 0                     | LINE 13127
+push constant 70               | LINE 13137
+push constant 63               | LINE 13144
+push constant 51               | LINE 13151
+push constant 35               | LINE 13158
+push constant 11               | LINE 13165
+push constant 15               | LINE 13172
+push constant 11               | LINE 13179
+push constant 3                | LINE 13186
+push constant 3                | LINE 13193
+push constant 3                | LINE 13200
+push constant 0                | LINE 13207
+push constant 0                | LINE 13214
+call Output.create 12          | LINE 13221
+pop temp 0                     | LINE 13271
+push constant 71               | LINE 13281
+push constant 28               | LINE 13288
+push constant 54               | LINE 13295
+push constant 35               | LINE 13302
+push constant 3                | LINE 13309
+push constant 59               | LINE 13316
+push constant 51               | LINE 13323
+push constant 51               | LINE 13330
+push constant 54               | LINE 13337
+push constant 44               | LINE 13344
+push constant 0                | LINE 13351
+push constant 0                | LINE 13358
+call Output.create 12          | LINE 13365
+pop temp 0                     | LINE 13415
+push constant 72               | LINE 13425
+push constant 51               | LINE 13432
+push constant 51               | LINE 13439
+push constant 51               | LINE 13446
+push constant 51               | LINE 13453
+push constant 63               | LINE 13460
+push constant 51               | LINE 13467
+push constant 51               | LINE 13474
+push constant 51               | LINE 13481
+push constant 51               | LINE 13488
+push constant 0                | LINE 13495
+push constant 0                | LINE 13502
+call Output.create 12          | LINE 13509
+pop temp 0                     | LINE 13559
+push constant 73               | LINE 13569
+push constant 30               | LINE 13576
+push constant 12               | LINE 13583
+push constant 12               | LINE 13590
+push constant 12               | LINE 13597
+push constant 12               | LINE 13604
+push constant 12               | LINE 13611
+push constant 12               | LINE 13618
+push constant 12               | LINE 13625
+push constant 30               | LINE 13632
+push constant 0                | LINE 13639
+push constant 0                | LINE 13646
+call Output.create 12          | LINE 13653
+pop temp 0                     | LINE 13703
+push constant 74               | LINE 13713
+push constant 60               | LINE 13720
+push constant 24               | LINE 13727
+push constant 24               | LINE 13734
+push constant 24               | LINE 13741
+push constant 24               | LINE 13748
+push constant 24               | LINE 13755
+push constant 27               | LINE 13762
+push constant 27               | LINE 13769
+push constant 14               | LINE 13776
+push constant 0                | LINE 13783
+push constant 0                | LINE 13790
+call Output.create 12          | LINE 13797
+pop temp 0                     | LINE 13847
+push constant 75               | LINE 13857
+push constant 51               | LINE 13864
+push constant 51               | LINE 13871
+push constant 51               | LINE 13878
+push constant 27               | LINE 13885
+push constant 15               | LINE 13892
+push constant 27               | LINE 13899
+push constant 51               | LINE 13906
+push constant 51               | LINE 13913
+push constant 51               | LINE 13920
+push constant 0                | LINE 13927
+push constant 0                | LINE 13934
+call Output.create 12          | LINE 13941
+pop temp 0                     | LINE 13991
+push constant 76               | LINE 14001
+push constant 3                | LINE 14008
+push constant 3                | LINE 14015
+push constant 3                | LINE 14022
+push constant 3                | LINE 14029
+push constant 3                | LINE 14036
+push constant 3                | LINE 14043
+push constant 35               | LINE 14050
+push constant 51               | LINE 14057
+push constant 63               | LINE 14064
+push constant 0                | LINE 14071
+push constant 0                | LINE 14078
+call Output.create 12          | LINE 14085
+pop temp 0                     | LINE 14135
+push constant 77               | LINE 14145
+push constant 33               | LINE 14152
+push constant 51               | LINE 14159
+push constant 63               | LINE 14166
+push constant 63               | LINE 14173
+push constant 51               | LINE 14180
+push constant 51               | LINE 14187
+push constant 51               | LINE 14194
+push constant 51               | LINE 14201
+push constant 51               | LINE 14208
+push constant 0                | LINE 14215
+push constant 0                | LINE 14222
+call Output.create 12          | LINE 14229
+pop temp 0                     | LINE 14279
+push constant 78               | LINE 14289
+push constant 51               | LINE 14296
+push constant 51               | LINE 14303
+push constant 55               | LINE 14310
+push constant 55               | LINE 14317
+push constant 63               | LINE 14324
+push constant 59               | LINE 14331
+push constant 59               | LINE 14338
+push constant 51               | LINE 14345
+push constant 51               | LINE 14352
+push constant 0                | LINE 14359
+push constant 0                | LINE 14366
+call Output.create 12          | LINE 14373
+pop temp 0                     | LINE 14423
+push constant 79               | LINE 14433
+push constant 30               | LINE 14440
+push constant 51               | LINE 14447
+push constant 51               | LINE 14454
+push constant 51               | LINE 14461
+push constant 51               | LINE 14468
+push constant 51               | LINE 14475
+push constant 51               | LINE 14482
+push constant 51               | LINE 14489
+push constant 30               | LINE 14496
+push constant 0                | LINE 14503
+push constant 0                | LINE 14510
+call Output.create 12          | LINE 14517
+pop temp 0                     | LINE 14567
+push constant 80               | LINE 14577
+push constant 31               | LINE 14584
+push constant 51               | LINE 14591
+push constant 51               | LINE 14598
+push constant 51               | LINE 14605
+push constant 31               | LINE 14612
+push constant 3                | LINE 14619
+push constant 3                | LINE 14626
+push constant 3                | LINE 14633
+push constant 3                | LINE 14640
+push constant 0                | LINE 14647
+push constant 0                | LINE 14654
+call Output.create 12          | LINE 14661
+pop temp 0                     | LINE 14711
+push constant 81               | LINE 14721
+push constant 30               | LINE 14728
+push constant 51               | LINE 14735
+push constant 51               | LINE 14742
+push constant 51               | LINE 14749
+push constant 51               | LINE 14756
+push constant 51               | LINE 14763
+push constant 63               | LINE 14770
+push constant 59               | LINE 14777
+push constant 30               | LINE 14784
+push constant 48               | LINE 14791
+push constant 0                | LINE 14798
+call Output.create 12          | LINE 14805
+pop temp 0                     | LINE 14855
+push constant 82               | LINE 14865
+push constant 31               | LINE 14872
+push constant 51               | LINE 14879
+push constant 51               | LINE 14886
+push constant 51               | LINE 14893
+push constant 31               | LINE 14900
+push constant 27               | LINE 14907
+push constant 51               | LINE 14914
+push constant 51               | LINE 14921
+push constant 51               | LINE 14928
+push constant 0                | LINE 14935
+push constant 0                | LINE 14942
+call Output.create 12          | LINE 14949
+pop temp 0                     | LINE 14999
+push constant 83               | LINE 15009
+push constant 30               | LINE 15016
+push constant 51               | LINE 15023
+push constant 51               | LINE 15030
+push constant 6                | LINE 15037
+push constant 28               | LINE 15044
+push constant 48               | LINE 15051
+push constant 51               | LINE 15058
+push constant 51               | LINE 15065
+push constant 30               | LINE 15072
+push constant 0                | LINE 15079
+push constant 0                | LINE 15086
+call Output.create 12          | LINE 15093
+pop temp 0                     | LINE 15143
+push constant 84               | LINE 15153
+push constant 63               | LINE 15160
+push constant 63               | LINE 15167
+push constant 45               | LINE 15174
+push constant 12               | LINE 15181
+push constant 12               | LINE 15188
+push constant 12               | LINE 15195
+push constant 12               | LINE 15202
+push constant 12               | LINE 15209
+push constant 30               | LINE 15216
+push constant 0                | LINE 15223
+push constant 0                | LINE 15230
+call Output.create 12          | LINE 15237
+pop temp 0                     | LINE 15287
+push constant 85               | LINE 15297
+push constant 51               | LINE 15304
+push constant 51               | LINE 15311
+push constant 51               | LINE 15318
+push constant 51               | LINE 15325
+push constant 51               | LINE 15332
+push constant 51               | LINE 15339
+push constant 51               | LINE 15346
+push constant 51               | LINE 15353
+push constant 30               | LINE 15360
+push constant 0                | LINE 15367
+push constant 0                | LINE 15374
+call Output.create 12          | LINE 15381
+pop temp 0                     | LINE 15431
+push constant 86               | LINE 15441
+push constant 51               | LINE 15448
+push constant 51               | LINE 15455
+push constant 51               | LINE 15462
+push constant 51               | LINE 15469
+push constant 51               | LINE 15476
+push constant 30               | LINE 15483
+push constant 30               | LINE 15490
+push constant 12               | LINE 15497
+push constant 12               | LINE 15504
+push constant 0                | LINE 15511
+push constant 0                | LINE 15518
+call Output.create 12          | LINE 15525
+pop temp 0                     | LINE 15575
+push constant 87               | LINE 15585
+push constant 51               | LINE 15592
+push constant 51               | LINE 15599
+push constant 51               | LINE 15606
+push constant 51               | LINE 15613
+push constant 51               | LINE 15620
+push constant 63               | LINE 15627
+push constant 63               | LINE 15634
+push constant 63               | LINE 15641
+push constant 18               | LINE 15648
+push constant 0                | LINE 15655
+push constant 0                | LINE 15662
+call Output.create 12          | LINE 15669
+pop temp 0                     | LINE 15719
+push constant 88               | LINE 15729
+push constant 51               | LINE 15736
+push constant 51               | LINE 15743
+push constant 30               | LINE 15750
+push constant 30               | LINE 15757
+push constant 12               | LINE 15764
+push constant 30               | LINE 15771
+push constant 30               | LINE 15778
+push constant 51               | LINE 15785
+push constant 51               | LINE 15792
+push constant 0                | LINE 15799
+push constant 0                | LINE 15806
+call Output.create 12          | LINE 15813
+pop temp 0                     | LINE 15863
+push constant 89               | LINE 15873
+push constant 51               | LINE 15880
+push constant 51               | LINE 15887
+push constant 51               | LINE 15894
+push constant 51               | LINE 15901
+push constant 30               | LINE 15908
+push constant 12               | LINE 15915
+push constant 12               | LINE 15922
+push constant 12               | LINE 15929
+push constant 30               | LINE 15936
+push constant 0                | LINE 15943
+push constant 0                | LINE 15950
+call Output.create 12          | LINE 15957
+pop temp 0                     | LINE 16007
+push constant 90               | LINE 16017
+push constant 63               | LINE 16024
+push constant 51               | LINE 16031
+push constant 49               | LINE 16038
+push constant 24               | LINE 16045
+push constant 12               | LINE 16052
+push constant 6                | LINE 16059
+push constant 35               | LINE 16066
+push constant 51               | LINE 16073
+push constant 63               | LINE 16080
+push constant 0                | LINE 16087
+push constant 0                | LINE 16094
+call Output.create 12          | LINE 16101
+pop temp 0                     | LINE 16151
+push constant 91               | LINE 16161
+push constant 30               | LINE 16168
+push constant 6                | LINE 16175
+push constant 6                | LINE 16182
+push constant 6                | LINE 16189
+push constant 6                | LINE 16196
+push constant 6                | LINE 16203
+push constant 6                | LINE 16210
+push constant 6                | LINE 16217
+push constant 30               | LINE 16224
+push constant 0                | LINE 16231
+push constant 0                | LINE 16238
+call Output.create 12          | LINE 16245
+pop temp 0                     | LINE 16295
+push constant 92               | LINE 16305
+push constant 0                | LINE 16312
+push constant 0                | LINE 16319
+push constant 1                | LINE 16326
+push constant 3                | LINE 16333
+push constant 6                | LINE 16340
+push constant 12               | LINE 16347
+push constant 24               | LINE 16354
+push constant 48               | LINE 16361
+push constant 32               | LINE 16368
+push constant 0                | LINE 16375
+push constant 0                | LINE 16382
+call Output.create 12          | LINE 16389
+pop temp 0                     | LINE 16439
+push constant 93               | LINE 16449
+push constant 30               | LINE 16456
+push constant 24               | LINE 16463
+push constant 24               | LINE 16470
+push constant 24               | LINE 16477
+push constant 24               | LINE 16484
+push constant 24               | LINE 16491
+push constant 24               | LINE 16498
+push constant 24               | LINE 16505
+push constant 30               | LINE 16512
+push constant 0                | LINE 16519
+push constant 0                | LINE 16526
+call Output.create 12          | LINE 16533
+pop temp 0                     | LINE 16583
+push constant 94               | LINE 16593
+push constant 8                | LINE 16600
+push constant 28               | LINE 16607
+push constant 54               | LINE 16614
+push constant 0                | LINE 16621
+push constant 0                | LINE 16628
+push constant 0                | LINE 16635
+push constant 0                | LINE 16642
+push constant 0                | LINE 16649
+push constant 0                | LINE 16656
+push constant 0                | LINE 16663
+push constant 0                | LINE 16670
+call Output.create 12          | LINE 16677
+pop temp 0                     | LINE 16727
+push constant 95               | LINE 16737
+push constant 0                | LINE 16744
+push constant 0                | LINE 16751
+push constant 0                | LINE 16758
+push constant 0                | LINE 16765
+push constant 0                | LINE 16772
+push constant 0                | LINE 16779
+push constant 0                | LINE 16786
+push constant 0                | LINE 16793
+push constant 0                | LINE 16800
+push constant 63               | LINE 16807
+push constant 0                | LINE 16814
+call Output.create 12          | LINE 16821
+pop temp 0                     | LINE 16871
+push constant 96               | LINE 16881
+push constant 6                | LINE 16888
+push constant 12               | LINE 16895
+push constant 24               | LINE 16902
+push constant 0                | LINE 16909
+push constant 0                | LINE 16916
+push constant 0                | LINE 16923
+push constant 0                | LINE 16930
+push constant 0                | LINE 16937
+push constant 0                | LINE 16944
+push constant 0                | LINE 16951
+push constant 0                | LINE 16958
+call Output.create 12          | LINE 16965
+pop temp 0                     | LINE 17015
+push constant 97               | LINE 17025
+push constant 0                | LINE 17032
+push constant 0                | LINE 17039
+push constant 0                | LINE 17046
+push constant 14               | LINE 17053
+push constant 24               | LINE 17060
+push constant 30               | LINE 17067
+push constant 27               | LINE 17074
+push constant 27               | LINE 17081
+push constant 54               | LINE 17088
+push constant 0                | LINE 17095
+push constant 0                | LINE 17102
+call Output.create 12          | LINE 17109
+pop temp 0                     | LINE 17159
+push constant 98               | LINE 17169
+push constant 3                | LINE 17176
+push constant 3                | LINE 17183
+push constant 3                | LINE 17190
+push constant 15               | LINE 17197
+push constant 27               | LINE 17204
+push constant 51               | LINE 17211
+push constant 51               | LINE 17218
+push constant 51               | LINE 17225
+push constant 30               | LINE 17232
+push constant 0                | LINE 17239
+push constant 0                | LINE 17246
+call Output.create 12          | LINE 17253
+pop temp 0                     | LINE 17303
+push constant 99               | LINE 17313
+push constant 0                | LINE 17320
+push constant 0                | LINE 17327
+push constant 0                | LINE 17334
+push constant 30               | LINE 17341
+push constant 51               | LINE 17348
+push constant 3                | LINE 17355
+push constant 3                | LINE 17362
+push constant 51               | LINE 17369
+push constant 30               | LINE 17376
+push constant 0                | LINE 17383
+push constant 0                | LINE 17390
+call Output.create 12          | LINE 17397
+pop temp 0                     | LINE 17447
+push constant 100              | LINE 17457
+push constant 48               | LINE 17464
+push constant 48               | LINE 17471
+push constant 48               | LINE 17478
+push constant 60               | LINE 17485
+push constant 54               | LINE 17492
+push constant 51               | LINE 17499
+push constant 51               | LINE 17506
+push constant 51               | LINE 17513
+push constant 30               | LINE 17520
+push constant 0                | LINE 17527
+push constant 0                | LINE 17534
+call Output.create 12          | LINE 17541
+pop temp 0                     | LINE 17591
+push constant 101              | LINE 17601
+push constant 0                | LINE 17608
+push constant 0                | LINE 17615
+push constant 0                | LINE 17622
+push constant 30               | LINE 17629
+push constant 51               | LINE 17636
+push constant 63               | LINE 17643
+push constant 3                | LINE 17650
+push constant 51               | LINE 17657
+push constant 30               | LINE 17664
+push constant 0                | LINE 17671
+push constant 0                | LINE 17678
+call Output.create 12          | LINE 17685
+pop temp 0                     | LINE 17735
+push constant 102              | LINE 17745
+push constant 28               | LINE 17752
+push constant 54               | LINE 17759
+push constant 38               | LINE 17766
+push constant 6                | LINE 17773
+push constant 15               | LINE 17780
+push constant 6                | LINE 17787
+push constant 6                | LINE 17794
+push constant 6                | LINE 17801
+push constant 15               | LINE 17808
+push constant 0                | LINE 17815
+push constant 0                | LINE 17822
+call Output.create 12          | LINE 17829
+pop temp 0                     | LINE 17879
+push constant 103              | LINE 17889
+push constant 0                | LINE 17896
+push constant 0                | LINE 17903
+push constant 30               | LINE 17910
+push constant 51               | LINE 17917
+push constant 51               | LINE 17924
+push constant 51               | LINE 17931
+push constant 62               | LINE 17938
+push constant 48               | LINE 17945
+push constant 51               | LINE 17952
+push constant 30               | LINE 17959
+push constant 0                | LINE 17966
+call Output.create 12          | LINE 17973
+pop temp 0                     | LINE 18023
+push constant 104              | LINE 18033
+push constant 3                | LINE 18040
+push constant 3                | LINE 18047
+push constant 3                | LINE 18054
+push constant 27               | LINE 18061
+push constant 55               | LINE 18068
+push constant 51               | LINE 18075
+push constant 51               | LINE 18082
+push constant 51               | LINE 18089
+push constant 51               | LINE 18096
+push constant 0                | LINE 18103
+push constant 0                | LINE 18110
+call Output.create 12          | LINE 18117
+pop temp 0                     | LINE 18167
+push constant 105              | LINE 18177
+push constant 12               | LINE 18184
+push constant 12               | LINE 18191
+push constant 0                | LINE 18198
+push constant 14               | LINE 18205
+push constant 12               | LINE 18212
+push constant 12               | LINE 18219
+push constant 12               | LINE 18226
+push constant 12               | LINE 18233
+push constant 30               | LINE 18240
+push constant 0                | LINE 18247
+push constant 0                | LINE 18254
+call Output.create 12          | LINE 18261
+pop temp 0                     | LINE 18311
+push constant 106              | LINE 18321
+push constant 48               | LINE 18328
+push constant 48               | LINE 18335
+push constant 0                | LINE 18342
+push constant 56               | LINE 18349
+push constant 48               | LINE 18356
+push constant 48               | LINE 18363
+push constant 48               | LINE 18370
+push constant 48               | LINE 18377
+push constant 51               | LINE 18384
+push constant 30               | LINE 18391
+push constant 0                | LINE 18398
+call Output.create 12          | LINE 18405
+pop temp 0                     | LINE 18455
+push constant 107              | LINE 18465
+push constant 3                | LINE 18472
+push constant 3                | LINE 18479
+push constant 3                | LINE 18486
+push constant 51               | LINE 18493
+push constant 27               | LINE 18500
+push constant 15               | LINE 18507
+push constant 15               | LINE 18514
+push constant 27               | LINE 18521
+push constant 51               | LINE 18528
+push constant 0                | LINE 18535
+push constant 0                | LINE 18542
+call Output.create 12          | LINE 18549
+pop temp 0                     | LINE 18599
+push constant 108              | LINE 18609
+push constant 14               | LINE 18616
+push constant 12               | LINE 18623
+push constant 12               | LINE 18630
+push constant 12               | LINE 18637
+push constant 12               | LINE 18644
+push constant 12               | LINE 18651
+push constant 12               | LINE 18658
+push constant 12               | LINE 18665
+push constant 30               | LINE 18672
+push constant 0                | LINE 18679
+push constant 0                | LINE 18686
+call Output.create 12          | LINE 18693
+pop temp 0                     | LINE 18743
+push constant 109              | LINE 18753
+push constant 0                | LINE 18760
+push constant 0                | LINE 18767
+push constant 0                | LINE 18774
+push constant 29               | LINE 18781
+push constant 63               | LINE 18788
+push constant 43               | LINE 18795
+push constant 43               | LINE 18802
+push constant 43               | LINE 18809
+push constant 43               | LINE 18816
+push constant 0                | LINE 18823
+push constant 0                | LINE 18830
+call Output.create 12          | LINE 18837
+pop temp 0                     | LINE 18887
+push constant 110              | LINE 18897
+push constant 0                | LINE 18904
+push constant 0                | LINE 18911
+push constant 0                | LINE 18918
+push constant 29               | LINE 18925
+push constant 51               | LINE 18932
+push constant 51               | LINE 18939
+push constant 51               | LINE 18946
+push constant 51               | LINE 18953
+push constant 51               | LINE 18960
+push constant 0                | LINE 18967
+push constant 0                | LINE 18974
+call Output.create 12          | LINE 18981
+pop temp 0                     | LINE 19031
+push constant 111              | LINE 19041
+push constant 0                | LINE 19048
+push constant 0                | LINE 19055
+push constant 0                | LINE 19062
+push constant 30               | LINE 19069
+push constant 51               | LINE 19076
+push constant 51               | LINE 19083
+push constant 51               | LINE 19090
+push constant 51               | LINE 19097
+push constant 30               | LINE 19104
+push constant 0                | LINE 19111
+push constant 0                | LINE 19118
+call Output.create 12          | LINE 19125
+pop temp 0                     | LINE 19175
+push constant 112              | LINE 19185
+push constant 0                | LINE 19192
+push constant 0                | LINE 19199
+push constant 0                | LINE 19206
+push constant 30               | LINE 19213
+push constant 51               | LINE 19220
+push constant 51               | LINE 19227
+push constant 51               | LINE 19234
+push constant 31               | LINE 19241
+push constant 3                | LINE 19248
+push constant 3                | LINE 19255
+push constant 0                | LINE 19262
+call Output.create 12          | LINE 19269
+pop temp 0                     | LINE 19319
+push constant 113              | LINE 19329
+push constant 0                | LINE 19336
+push constant 0                | LINE 19343
+push constant 0                | LINE 19350
+push constant 30               | LINE 19357
+push constant 51               | LINE 19364
+push constant 51               | LINE 19371
+push constant 51               | LINE 19378
+push constant 62               | LINE 19385
+push constant 48               | LINE 19392
+push constant 48               | LINE 19399
+push constant 0                | LINE 19406
+call Output.create 12          | LINE 19413
+pop temp 0                     | LINE 19463
+push constant 114              | LINE 19473
+push constant 0                | LINE 19480
+push constant 0                | LINE 19487
+push constant 0                | LINE 19494
+push constant 29               | LINE 19501
+push constant 55               | LINE 19508
+push constant 51               | LINE 19515
+push constant 3                | LINE 19522
+push constant 3                | LINE 19529
+push constant 7                | LINE 19536
+push constant 0                | LINE 19543
+push constant 0                | LINE 19550
+call Output.create 12          | LINE 19557
+pop temp 0                     | LINE 19607
+push constant 115              | LINE 19617
+push constant 0                | LINE 19624
+push constant 0                | LINE 19631
+push constant 0                | LINE 19638
+push constant 30               | LINE 19645
+push constant 51               | LINE 19652
+push constant 6                | LINE 19659
+push constant 24               | LINE 19666
+push constant 51               | LINE 19673
+push constant 30               | LINE 19680
+push constant 0                | LINE 19687
+push constant 0                | LINE 19694
+call Output.create 12          | LINE 19701
+pop temp 0                     | LINE 19751
+push constant 116              | LINE 19761
+push constant 4                | LINE 19768
+push constant 6                | LINE 19775
+push constant 6                | LINE 19782
+push constant 15               | LINE 19789
+push constant 6                | LINE 19796
+push constant 6                | LINE 19803
+push constant 6                | LINE 19810
+push constant 54               | LINE 19817
+push constant 28               | LINE 19824
+push constant 0                | LINE 19831
+push constant 0                | LINE 19838
+call Output.create 12          | LINE 19845
+pop temp 0                     | LINE 19895
+push constant 117              | LINE 19905
+push constant 0                | LINE 19912
+push constant 0                | LINE 19919
+push constant 0                | LINE 19926
+push constant 27               | LINE 19933
+push constant 27               | LINE 19940
+push constant 27               | LINE 19947
+push constant 27               | LINE 19954
+push constant 27               | LINE 19961
+push constant 54               | LINE 19968
+push constant 0                | LINE 19975
+push constant 0                | LINE 19982
+call Output.create 12          | LINE 19989
+pop temp 0                     | LINE 20039
+push constant 118              | LINE 20049
+push constant 0                | LINE 20056
+push constant 0                | LINE 20063
+push constant 0                | LINE 20070
+push constant 51               | LINE 20077
+push constant 51               | LINE 20084
+push constant 51               | LINE 20091
+push constant 51               | LINE 20098
+push constant 30               | LINE 20105
+push constant 12               | LINE 20112
+push constant 0                | LINE 20119
+push constant 0                | LINE 20126
+call Output.create 12          | LINE 20133
+pop temp 0                     | LINE 20183
+push constant 119              | LINE 20193
+push constant 0                | LINE 20200
+push constant 0                | LINE 20207
+push constant 0                | LINE 20214
+push constant 51               | LINE 20221
+push constant 51               | LINE 20228
+push constant 51               | LINE 20235
+push constant 63               | LINE 20242
+push constant 63               | LINE 20249
+push constant 18               | LINE 20256
+push constant 0                | LINE 20263
+push constant 0                | LINE 20270
+call Output.create 12          | LINE 20277
+pop temp 0                     | LINE 20327
+push constant 120              | LINE 20337
+push constant 0                | LINE 20344
+push constant 0                | LINE 20351
+push constant 0                | LINE 20358
+push constant 51               | LINE 20365
+push constant 30               | LINE 20372
+push constant 12               | LINE 20379
+push constant 12               | LINE 20386
+push constant 30               | LINE 20393
+push constant 51               | LINE 20400
+push constant 0                | LINE 20407
+push constant 0                | LINE 20414
+call Output.create 12          | LINE 20421
+pop temp 0                     | LINE 20471
+push constant 121              | LINE 20481
+push constant 0                | LINE 20488
+push constant 0                | LINE 20495
+push constant 0                | LINE 20502
+push constant 51               | LINE 20509
+push constant 51               | LINE 20516
+push constant 51               | LINE 20523
+push constant 62               | LINE 20530
+push constant 48               | LINE 20537
+push constant 24               | LINE 20544
+push constant 15               | LINE 20551
+push constant 0                | LINE 20558
+call Output.create 12          | LINE 20565
+pop temp 0                     | LINE 20615
+push constant 122              | LINE 20625
+push constant 0                | LINE 20632
+push constant 0                | LINE 20639
+push constant 0                | LINE 20646
+push constant 63               | LINE 20653
+push constant 27               | LINE 20660
+push constant 12               | LINE 20667
+push constant 6                | LINE 20674
+push constant 51               | LINE 20681
+push constant 63               | LINE 20688
+push constant 0                | LINE 20695
+push constant 0                | LINE 20702
+call Output.create 12          | LINE 20709
+pop temp 0                     | LINE 20759
+push constant 123              | LINE 20769
+push constant 56               | LINE 20776
+push constant 12               | LINE 20783
+push constant 12               | LINE 20790
+push constant 12               | LINE 20797
+push constant 7                | LINE 20804
+push constant 12               | LINE 20811
+push constant 12               | LINE 20818
+push constant 12               | LINE 20825
+push constant 56               | LINE 20832
+push constant 0                | LINE 20839
+push constant 0                | LINE 20846
+call Output.create 12          | LINE 20853
+pop temp 0                     | LINE 20903
+push constant 124              | LINE 20913
+push constant 12               | LINE 20920
+push constant 12               | LINE 20927
+push constant 12               | LINE 20934
+push constant 12               | LINE 20941
+push constant 12               | LINE 20948
+push constant 12               | LINE 20955
+push constant 12               | LINE 20962
+push constant 12               | LINE 20969
+push constant 12               | LINE 20976
+push constant 0                | LINE 20983
+push constant 0                | LINE 20990
+call Output.create 12          | LINE 20997
+pop temp 0                     | LINE 21047
+push constant 125              | LINE 21057
+push constant 7                | LINE 21064
+push constant 12               | LINE 21071
+push constant 12               | LINE 21078
+push constant 12               | LINE 21085
+push constant 56               | LINE 21092
+push constant 12               | LINE 21099
+push constant 12               | LINE 21106
+push constant 12               | LINE 21113
+push constant 7                | LINE 21120
+push constant 0                | LINE 21127
+push constant 0                | LINE 21134
+call Output.create 12          | LINE 21141
+pop temp 0                     | LINE 21191
+push constant 126              | LINE 21201
+push constant 38               | LINE 21208
+push constant 45               | LINE 21215
+push constant 25               | LINE 21222
+push constant 0                | LINE 21229
+push constant 0                | LINE 21236
+push constant 0                | LINE 21243
+push constant 0                | LINE 21250
+push constant 0                | LINE 21257
+push constant 0                | LINE 21264
+push constant 0                | LINE 21271
+push constant 0                | LINE 21278
+call Output.create 12          | LINE 21285
+pop temp 0                     | LINE 21335
+push constant 0                | LINE 21345
+return                         | LINE 21352
+function Output.create 1       | LINE 21410
+push constant 11               | LINE 21428
+call Array.new 1               | LINE 21435
+pop local 0                    | LINE 21485
+push static 0                  | LINE 21497
+push argument 0                | LINE 21504
+add                            | LINE 21514
+push local 0                   | LINE 21519
+pop temp 0                     | LINE 21529
+pop pointer 1                  | LINE 21539
+push temp 0                    | LINE 21549
+pop that 0                     | LINE 21556
+push local 0                   | LINE 21568
+push constant 0                | LINE 21578
+add                            | LINE 21585
+push argument 1                | LINE 21590
+pop temp 0                     | LINE 21600
+pop pointer 1                  | LINE 21610
+push temp 0                    | LINE 21620
+pop that 0                     | LINE 21627
+push local 0                   | LINE 21639
+push constant 1                | LINE 21649
+add                            | LINE 21656
+push argument 2                | LINE 21661
+pop temp 0                     | LINE 21671
+pop pointer 1                  | LINE 21681
+push temp 0                    | LINE 21691
+pop that 0                     | LINE 21698
+push local 0                   | LINE 21710
+push constant 2                | LINE 21720
+add                            | LINE 21727
+push argument 3                | LINE 21732
+pop temp 0                     | LINE 21742
+pop pointer 1                  | LINE 21752
+push temp 0                    | LINE 21762
+pop that 0                     | LINE 21769
+push local 0                   | LINE 21781
+push constant 3                | LINE 21791
+add                            | LINE 21798
+push argument 4                | LINE 21803
+pop temp 0                     | LINE 21813
+pop pointer 1                  | LINE 21823
+push temp 0                    | LINE 21833
+pop that 0                     | LINE 21840
+push local 0                   | LINE 21852
+push constant 4                | LINE 21862
+add                            | LINE 21869
+push argument 5                | LINE 21874
+pop temp 0                     | LINE 21884
+pop pointer 1                  | LINE 21894
+push temp 0                    | LINE 21904
+pop that 0                     | LINE 21911
+push local 0                   | LINE 21923
+push constant 5                | LINE 21933
+add                            | LINE 21940
+push argument 6                | LINE 21945
+pop temp 0                     | LINE 21955
+pop pointer 1                  | LINE 21965
+push temp 0                    | LINE 21975
+pop that 0                     | LINE 21982
+push local 0                   | LINE 21994
+push constant 6                | LINE 22004
+add                            | LINE 22011
+push argument 7                | LINE 22016
+pop temp 0                     | LINE 22026
+pop pointer 1                  | LINE 22036
+push temp 0                    | LINE 22046
+pop that 0                     | LINE 22053
+push local 0                   | LINE 22065
+push constant 7                | LINE 22075
+add                            | LINE 22082
+push argument 8                | LINE 22087
+pop temp 0                     | LINE 22097
+pop pointer 1                  | LINE 22107
+push temp 0                    | LINE 22117
+pop that 0                     | LINE 22124
+push local 0                   | LINE 22136
+push constant 8                | LINE 22146
+add                            | LINE 22153
+push argument 9                | LINE 22158
+pop temp 0                     | LINE 22168
+pop pointer 1                  | LINE 22178
+push temp 0                    | LINE 22188
+pop that 0                     | LINE 22195
+push local 0                   | LINE 22207
+push constant 9                | LINE 22217
+add                            | LINE 22224
+push argument 10               | LINE 22229
+pop temp 0                     | LINE 22239
+pop pointer 1                  | LINE 22249
+push temp 0                    | LINE 22259
+pop that 0                     | LINE 22266
+push local 0                   | LINE 22278
+push constant 10               | LINE 22288
+add                            | LINE 22295
+push argument 11               | LINE 22300
+pop temp 0                     | LINE 22310
+pop pointer 1                  | LINE 22320
+push temp 0                    | LINE 22330
+pop that 0                     | LINE 22337
+push constant 0                | LINE 22349
+return                         | LINE 22356
+function Output.getMap 0       | LINE 22414
+push argument 0                | LINE 22415
+push constant 32               | LINE 22425
+lt                             | LINE 22432
+push argument 0                | LINE 22444
+push constant 126              | LINE 22454
+gt                             | LINE 22461
+or                             | LINE 22473
+not                            | LINE 22478
+if-goto $IF.FALSE.0            | LINE 22481
+push constant 0                | LINE 22486
+pop argument 0                 | LINE 22493
+label $IF.FALSE.0              | LINE 22505
+push static 0                  | LINE 22506
+push argument 0                | LINE 22513
+add                            | LINE 22523
+pop pointer 1                  | LINE 22528
+push that 0                    | LINE 22538
+return                         | LINE 22548
+function Output.moveCursor 0   | LINE 22606
+push argument 1                | LINE 22607
+pop static 2                   | LINE 22617
+push argument 0                | LINE 22627
+pop static 3                   | LINE 22637
+push constant 32               | LINE 22647
+call Output.print_char 1       | LINE 22654
+pop temp 0                     | LINE 22704
+push constant 0                | LINE 22714
+return                         | LINE 22721
+function Output.printChar 0    | LINE 22779
+push argument 0                | LINE 22780
+call Output.print_char 1       | LINE 22790
+pop temp 0                     | LINE 22840
+call Output.advanceCursor 0    | LINE 22850
+pop temp 0                     | LINE 22900
+push constant 0                | LINE 22910
+return                         | LINE 22917
+function Output.print_char 3   | LINE 22975
+push static 0                  | LINE 22993
+push argument 0                | LINE 23000
+add                            | LINE 23010
+pop pointer 1                  | LINE 23015
+push that 0                    | LINE 23025
+pop local 0                    | LINE 23035
+push constant 0                | LINE 23047
+pop local 1                    | LINE 23054
+push static 2                  | LINE 23066
+push constant 2                | LINE 23073
+call Math.divide 2             | LINE 23080
+push static 3                  | LINE 23130
+push constant 352              | LINE 23137
+call Math.multiply 2           | LINE 23144
+add                            | LINE 23194
+pop local 2                    | LINE 23199
+label $WHILE.START.1           | LINE 23211
+push local 1                   | LINE 23212
+push constant 11               | LINE 23222
+lt                             | LINE 23229
+not                            | LINE 23241
+if-goto $WHILE.END.1           | LINE 23244
+push static 2                  | LINE 23249
+push constant 1                | LINE 23256
+and                            | LINE 23263
+not                            | LINE 23268
+not                            | LINE 23271
+if-goto $IF.FALSE.2            | LINE 23274
+push static 1                  | LINE 23279
+push local 2                   | LINE 23286
+add                            | LINE 23296
+push static 1                  | LINE 23301
+push local 2                   | LINE 23308
+add                            | LINE 23318
+pop pointer 1                  | LINE 23323
+push that 0                    | LINE 23333
+push constant 256              | LINE 23343
+neg                            | LINE 23350
+and                            | LINE 23353
+push local 0                   | LINE 23358
+push local 1                   | LINE 23368
+add                            | LINE 23378
+pop pointer 1                  | LINE 23383
+push that 0                    | LINE 23393
+or                             | LINE 23403
+pop temp 0                     | LINE 23408
+pop pointer 1                  | LINE 23418
+push temp 0                    | LINE 23428
+pop that 0                     | LINE 23435
+goto $IF.END.2                 | LINE 23447
+label $IF.FALSE.2              | LINE 23449
+push static 1                  | LINE 23450
+push local 2                   | LINE 23457
+add                            | LINE 23467
+push static 1                  | LINE 23472
+push local 2                   | LINE 23479
+add                            | LINE 23489
+pop pointer 1                  | LINE 23494
+push that 0                    | LINE 23504
+push constant 255              | LINE 23514
+and                            | LINE 23521
+push local 0                   | LINE 23526
+push local 1                   | LINE 23536
+add                            | LINE 23546
+pop pointer 1                  | LINE 23551
+push that 0                    | LINE 23561
+push constant 256              | LINE 23571
+call Math.multiply 2           | LINE 23578
+or                             | LINE 23628
+pop temp 0                     | LINE 23633
+pop pointer 1                  | LINE 23643
+push temp 0                    | LINE 23653
+pop that 0                     | LINE 23660
+label $IF.END.2                | LINE 23672
+push local 1                   | LINE 23673
+push constant 1                | LINE 23683
+add                            | LINE 23690
+pop local 1                    | LINE 23695
+push local 2                   | LINE 23707
+push constant 32               | LINE 23717
+add                            | LINE 23724
+pop local 2                    | LINE 23729
+goto $WHILE.START.1            | LINE 23741
+label $WHILE.END.1             | LINE 23743
+push constant 0                | LINE 23744
+return                         | LINE 23751
+function Output.printString 1  | LINE 23809
+push constant 0                | LINE 23827
+pop local 0                    | LINE 23834
+label $WHILE.START.3           | LINE 23846
+push local 0                   | LINE 23847
+push argument 0                | LINE 23857
+call String.length 1           | LINE 23867
+lt                             | LINE 23917
+not                            | LINE 23929
+if-goto $WHILE.END.3           | LINE 23932
+push argument 0                | LINE 23937
+push local 0                   | LINE 23947
+call String.charAt 2           | LINE 23957
+call Output.printChar 1        | LINE 24007
+pop temp 0                     | LINE 24057
+push local 0                   | LINE 24067
+push constant 1                | LINE 24077
+add                            | LINE 24084
+pop local 0                    | LINE 24089
+goto $WHILE.START.3            | LINE 24101
+label $WHILE.END.3             | LINE 24103
+push constant 0                | LINE 24104
+return                         | LINE 24111
+function Output.printInt 1     | LINE 24169
+push constant 6                | LINE 24187
+call String.new 1              | LINE 24194
+pop local 0                    | LINE 24244
+push local 0                   | LINE 24256
+push argument 0                | LINE 24266
+call String.setInt 2           | LINE 24276
+pop temp 0                     | LINE 24326
+push local 0                   | LINE 24336
+call Output.printString 1      | LINE 24346
+return                         | LINE 24396
+function Output.println 0      | LINE 24454
+push static 3                  | LINE 24455
+push constant 22               | LINE 24462
+lt                             | LINE 24469
+not                            | LINE 24481
+if-goto $IF.FALSE.4            | LINE 24484
+push static 3                  | LINE 24489
+push constant 1                | LINE 24496
+add                            | LINE 24503
+pop static 3                   | LINE 24508
+goto $IF.END.4                 | LINE 24518
+label $IF.FALSE.4              | LINE 24520
+push constant 0                | LINE 24521
+pop static 3                   | LINE 24528
+label $IF.END.4                | LINE 24538
+push constant 0                | LINE 24539
+pop static 2                   | LINE 24546
+push constant 0                | LINE 24556
+return                         | LINE 24563
+function Output.backSpace 0    | LINE 24621
+push static 2                  | LINE 24622
+push constant 0                | LINE 24629
+eq                             | LINE 24636
+push static 3                  | LINE 24648
+push constant 0                | LINE 24655
+eq                             | LINE 24662
+and                            | LINE 24674
+not                            | LINE 24679
+if-goto $IF.FALSE.5            | LINE 24682
+push constant 63               | LINE 24687
+pop static 2                   | LINE 24694
+push constant 22               | LINE 24704
+pop static 3                   | LINE 24711
+push constant 32               | LINE 24721
+call Output.print_char 1       | LINE 24728
+pop temp 0                     | LINE 24778
+push constant 0                | LINE 24788
+return                         | LINE 24795
+label $IF.FALSE.5              | LINE 24853
+push static 2                  | LINE 24854
+push constant 0                | LINE 24861
+gt                             | LINE 24868
+not                            | LINE 24880
+if-goto $IF.FALSE.6            | LINE 24883
+push static 2                  | LINE 24888
+push constant 1                | LINE 24895
+sub                            | LINE 24902
+pop static 2                   | LINE 24907
+goto $IF.END.6                 | LINE 24917
+label $IF.FALSE.6              | LINE 24919
+push constant 63               | LINE 24920
+pop static 2                   | LINE 24927
+push static 3                  | LINE 24937
+push constant 1                | LINE 24944
+sub                            | LINE 24951
+pop static 3                   | LINE 24956
+label $IF.END.6                | LINE 24966
+push constant 32               | LINE 24967
+call Output.print_char 1       | LINE 24974
+pop temp 0                     | LINE 25024
+push constant 0                | LINE 25034
+return                         | LINE 25041
+function Output.advanceCursor 0 | LINE 25099
+push static 2                  | LINE 25100
+push constant 63               | LINE 25107
+eq                             | LINE 25114
+push static 3                  | LINE 25126
+push constant 22               | LINE 25133
+eq                             | LINE 25140
+and                            | LINE 25152
+not                            | LINE 25157
+if-goto $IF.FALSE.7            | LINE 25160
+push constant 0                | LINE 25165
+pop static 2                   | LINE 25172
+push constant 0                | LINE 25182
+pop static 3                   | LINE 25189
+push constant 0                | LINE 25199
+return                         | LINE 25206
+label $IF.FALSE.7              | LINE 25264
+push static 2                  | LINE 25265
+push constant 64               | LINE 25272
+lt                             | LINE 25279
+not                            | LINE 25291
+if-goto $IF.FALSE.8            | LINE 25294
+push static 2                  | LINE 25299
+push constant 1                | LINE 25306
+add                            | LINE 25313
+pop static 2                   | LINE 25318
+goto $IF.END.8                 | LINE 25328
+label $IF.FALSE.8              | LINE 25330
+push constant 0                | LINE 25331
+pop static 2                   | LINE 25338
+push static 3                  | LINE 25348
+push constant 1                | LINE 25355
+add                            | LINE 25362
+pop static 3                   | LINE 25367
+label $IF.END.8                | LINE 25377
+push constant 32               | LINE 25378
+call Output.print_char 1       | LINE 25385
+pop temp 0                     | LINE 25435
+push constant 0                | LINE 25445
+return                         | LINE 25452
+function Screen.init 0         | LINE 25510
+push constant 16384            | LINE 25511
+pop static 0                   | LINE 25518
+push constant 0                | LINE 25528
+not                            | LINE 25535
+pop static 2                   | LINE 25538
+push constant 17               | LINE 25548
+call Array.new 1               | LINE 25555
+pop static 1                   | LINE 25605
+push static 1                  | LINE 25615
+push constant 0                | LINE 25622
+add                            | LINE 25629
+push constant 1                | LINE 25634
+pop temp 0                     | LINE 25641
+pop pointer 1                  | LINE 25651
+push temp 0                    | LINE 25661
+pop that 0                     | LINE 25668
+push static 1                  | LINE 25680
+push constant 1                | LINE 25687
+add                            | LINE 25694
+push constant 2                | LINE 25699
+pop temp 0                     | LINE 25706
+pop pointer 1                  | LINE 25716
+push temp 0                    | LINE 25726
+pop that 0                     | LINE 25733
+push static 1                  | LINE 25745
+push constant 2                | LINE 25752
+add                            | LINE 25759
+push constant 4                | LINE 25764
+pop temp 0                     | LINE 25771
+pop pointer 1                  | LINE 25781
+push temp 0                    | LINE 25791
+pop that 0                     | LINE 25798
+push static 1                  | LINE 25810
+push constant 3                | LINE 25817
+add                            | LINE 25824
+push constant 8                | LINE 25829
+pop temp 0                     | LINE 25836
+pop pointer 1                  | LINE 25846
+push temp 0                    | LINE 25856
+pop that 0                     | LINE 25863
+push static 1                  | LINE 25875
+push constant 4                | LINE 25882
+add                            | LINE 25889
+push constant 16               | LINE 25894
+pop temp 0                     | LINE 25901
+pop pointer 1                  | LINE 25911
+push temp 0                    | LINE 25921
+pop that 0                     | LINE 25928
+push static 1                  | LINE 25940
+push constant 5                | LINE 25947
+add                            | LINE 25954
+push constant 32               | LINE 25959
+pop temp 0                     | LINE 25966
+pop pointer 1                  | LINE 25976
+push temp 0                    | LINE 25986
+pop that 0                     | LINE 25993
+push static 1                  | LINE 26005
+push constant 6                | LINE 26012
+add                            | LINE 26019
+push constant 64               | LINE 26024
+pop temp 0                     | LINE 26031
+pop pointer 1                  | LINE 26041
+push temp 0                    | LINE 26051
+pop that 0                     | LINE 26058
+push static 1                  | LINE 26070
+push constant 7                | LINE 26077
+add                            | LINE 26084
+push constant 128              | LINE 26089
+pop temp 0                     | LINE 26096
+pop pointer 1                  | LINE 26106
+push temp 0                    | LINE 26116
+pop that 0                     | LINE 26123
+push static 1                  | LINE 26135
+push constant 8                | LINE 26142
+add                            | LINE 26149
+push constant 256              | LINE 26154
+pop temp 0                     | LINE 26161
+pop pointer 1                  | LINE 26171
+push temp 0                    | LINE 26181
+pop that 0                     | LINE 26188
+push static 1                  | LINE 26200
+push constant 9                | LINE 26207
+add                            | LINE 26214
+push constant 512              | LINE 26219
+pop temp 0                     | LINE 26226
+pop pointer 1                  | LINE 26236
+push temp 0                    | LINE 26246
+pop that 0                     | LINE 26253
+push static 1                  | LINE 26265
+push constant 10               | LINE 26272
+add                            | LINE 26279
+push constant 1024             | LINE 26284
+pop temp 0                     | LINE 26291
+pop pointer 1                  | LINE 26301
+push temp 0                    | LINE 26311
+pop that 0                     | LINE 26318
+push static 1                  | LINE 26330
+push constant 11               | LINE 26337
+add                            | LINE 26344
+push constant 2048             | LINE 26349
+pop temp 0                     | LINE 26356
+pop pointer 1                  | LINE 26366
+push temp 0                    | LINE 26376
+pop that 0                     | LINE 26383
+push static 1                  | LINE 26395
+push constant 12               | LINE 26402
+add                            | LINE 26409
+push constant 4096             | LINE 26414
+pop temp 0                     | LINE 26421
+pop pointer 1                  | LINE 26431
+push temp 0                    | LINE 26441
+pop that 0                     | LINE 26448
+push static 1                  | LINE 26460
+push constant 13               | LINE 26467
+add                            | LINE 26474
+push constant 8192             | LINE 26479
+pop temp 0                     | LINE 26486
+pop pointer 1                  | LINE 26496
+push temp 0                    | LINE 26506
+pop that 0                     | LINE 26513
+push static 1                  | LINE 26525
+push constant 14               | LINE 26532
+add                            | LINE 26539
+push constant 16384            | LINE 26544
+pop temp 0                     | LINE 26551
+pop pointer 1                  | LINE 26561
+push temp 0                    | LINE 26571
+pop that 0                     | LINE 26578
+push static 1                  | LINE 26590
+push constant 15               | LINE 26597
+add                            | LINE 26604
+push constant 16384            | LINE 26609
+push constant 16384            | LINE 26616
+add                            | LINE 26623
+pop temp 0                     | LINE 26628
+pop pointer 1                  | LINE 26638
+push temp 0                    | LINE 26648
+pop that 0                     | LINE 26655
+push static 1                  | LINE 26667
+push constant 16               | LINE 26674
+add                            | LINE 26681
+push constant 0                | LINE 26686
+pop temp 0                     | LINE 26693
+pop pointer 1                  | LINE 26703
+push temp 0                    | LINE 26713
+pop that 0                     | LINE 26720
+push constant 0                | LINE 26732
+return                         | LINE 26739
+function Screen.clearScreen 1  | LINE 26797
+push constant 0                | LINE 26815
+pop local 0                    | LINE 26822
+label $WHILE.START.0           | LINE 26834
+push local 0                   | LINE 26835
+push constant 8192             | LINE 26845
+lt                             | LINE 26852
+not                            | LINE 26864
+if-goto $WHILE.END.0           | LINE 26867
+push static 0                  | LINE 26872
+push local 0                   | LINE 26879
+add                            | LINE 26889
+push constant 0                | LINE 26894
+pop temp 0                     | LINE 26901
+pop pointer 1                  | LINE 26911
+push temp 0                    | LINE 26921
+pop that 0                     | LINE 26928
+push local 0                   | LINE 26940
+push constant 1                | LINE 26950
+add                            | LINE 26957
+pop local 0                    | LINE 26962
+goto $WHILE.START.0            | LINE 26974
+label $WHILE.END.0             | LINE 26976
+push constant 0                | LINE 26977
+return                         | LINE 26984
+function Screen.setColor 0     | LINE 27042
+push argument 0                | LINE 27043
+pop static 2                   | LINE 27053
+push constant 0                | LINE 27063
+return                         | LINE 27070
+function Screen.drawPixel 4    | LINE 27128
+push constant 0                | LINE 27146
+pop local 2                    | LINE 27153
+push constant 0                | LINE 27165
+pop local 3                    | LINE 27172
+label $WHILE.START.1           | LINE 27184
+push local 3                   | LINE 27185
+push argument 0                | LINE 27195
+push constant 1                | LINE 27205
+add                            | LINE 27212
+lt                             | LINE 27217
+not                            | LINE 27229
+if-goto $WHILE.END.1           | LINE 27232
+push local 3                   | LINE 27237
+push constant 16               | LINE 27247
+add                            | LINE 27254
+pop local 3                    | LINE 27259
+push local 2                   | LINE 27271
+push constant 1                | LINE 27281
+add                            | LINE 27288
+pop local 2                    | LINE 27293
+goto $WHILE.START.1            | LINE 27305
+label $WHILE.END.1             | LINE 27307
+push local 2                   | LINE 27308
+push constant 1                | LINE 27318
+sub                            | LINE 27325
+push argument 1                | LINE 27330
+push constant 32               | LINE 27340
+call Math.multiply 2           | LINE 27347
+add                            | LINE 27397
+pop local 0                    | LINE 27402
+push argument 0                | LINE 27414
+push constant 15               | LINE 27424
+and                            | LINE 27431
+pop argument 0                 | LINE 27436
+push static 2                  | LINE 27448
+not                            | LINE 27455
+if-goto $IF.FALSE.2            | LINE 27458
+push static 0                  | LINE 27463
+push local 0                   | LINE 27470
+add                            | LINE 27480
+pop pointer 1                  | LINE 27485
+push that 0                    | LINE 27495
+push static 1                  | LINE 27505
+push argument 0                | LINE 27512
+add                            | LINE 27522
+pop pointer 1                  | LINE 27527
+push that 0                    | LINE 27537
+or                             | LINE 27547
+pop local 1                    | LINE 27552
+goto $IF.END.2                 | LINE 27564
+label $IF.FALSE.2              | LINE 27566
+push static 0                  | LINE 27567
+push local 0                   | LINE 27574
+add                            | LINE 27584
+pop pointer 1                  | LINE 27589
+push that 0                    | LINE 27599
+not                            | LINE 27609
+push static 1                  | LINE 27612
+push argument 0                | LINE 27619
+add                            | LINE 27629
+pop pointer 1                  | LINE 27634
+push that 0                    | LINE 27644
+or                             | LINE 27654
+not                            | LINE 27659
+pop local 1                    | LINE 27662
+label $IF.END.2                | LINE 27674
+push static 0                  | LINE 27675
+push local 0                   | LINE 27682
+add                            | LINE 27692
+push local 1                   | LINE 27697
+pop temp 0                     | LINE 27707
+pop pointer 1                  | LINE 27717
+push temp 0                    | LINE 27727
+pop that 0                     | LINE 27734
+push constant 0                | LINE 27746
+return                         | LINE 27753
+function Screen.drawLine 7     | LINE 27811
+push constant 0                | LINE 27829
+pop local 2                    | LINE 27836
+push constant 0                | LINE 27848
+pop local 3                    | LINE 27855
+push constant 0                | LINE 27867
+pop local 4                    | LINE 27874
+push argument 2                | LINE 27886
+push argument 0                | LINE 27896
+sub                            | LINE 27906
+pop local 0                    | LINE 27911
+push argument 3                | LINE 27923
+push argument 1                | LINE 27933
+sub                            | LINE 27943
+pop local 1                    | LINE 27948
+push constant 1                | LINE 27960
+pop local 5                    | LINE 27967
+push constant 1                | LINE 27979
+pop local 6                    | LINE 27986
+push local 1                   | LINE 27998
+push constant 0                | LINE 28008
+lt                             | LINE 28015
+not                            | LINE 28027
+if-goto $IF.FALSE.3            | LINE 28030
+push constant 1                | LINE 28035
+neg                            | LINE 28042
+pop local 6                    | LINE 28045
+label $IF.FALSE.3              | LINE 28057
+push local 0                   | LINE 28058
+push constant 0                | LINE 28068
+lt                             | LINE 28075
+not                            | LINE 28087
+if-goto $IF.FALSE.4            | LINE 28090
+push constant 1                | LINE 28095
+neg                            | LINE 28102
+pop local 5                    | LINE 28105
+label $IF.FALSE.4              | LINE 28117
+push local 1                   | LINE 28118
+push constant 0                | LINE 28128
+eq                             | LINE 28135
+not                            | LINE 28147
+if-goto $IF.FALSE.5            | LINE 28150
+push local 0                   | LINE 28155
+push constant 0                | LINE 28165
+lt                             | LINE 28172
+not                            | LINE 28184
+if-goto $IF.FALSE.6            | LINE 28187
+push argument 2                | LINE 28192
+push argument 0                | LINE 28202
+push argument 1                | LINE 28212
+call Screen.drawHLine 3        | LINE 28222
+return                         | LINE 28272
+label $IF.FALSE.6              | LINE 28330
+push argument 0                | LINE 28331
+push argument 2                | LINE 28341
+push argument 1                | LINE 28351
+call Screen.drawHLine 3        | LINE 28361
+return                         | LINE 28411
+label $IF.FALSE.5              | LINE 28469
+push local 0                   | LINE 28470
+push constant 0                | LINE 28480
+eq                             | LINE 28487
+not                            | LINE 28499
+if-goto $IF.FALSE.7            | LINE 28502
+push local 1                   | LINE 28507
+push constant 0                | LINE 28517
+lt                             | LINE 28524
+not                            | LINE 28536
+if-goto $IF.FALSE.8            | LINE 28539
+push argument 0                | LINE 28544
+push argument 3                | LINE 28554
+push argument 1                | LINE 28564
+call Screen.drawVLine 3        | LINE 28574
+return                         | LINE 28624
+label $IF.FALSE.8              | LINE 28682
+push argument 0                | LINE 28683
+push argument 1                | LINE 28693
+push argument 3                | LINE 28703
+call Screen.drawVLine 3        | LINE 28713
+return                         | LINE 28763
+label $IF.FALSE.7              | LINE 28821
+push local 0                   | LINE 28822
+push constant 0                | LINE 28832
+gt                             | LINE 28839
+not                            | LINE 28851
+if-goto $IF.FALSE.9            | LINE 28854
+push local 1                   | LINE 28859
+push constant 0                | LINE 28869
+gt                             | LINE 28876
+not                            | LINE 28888
+if-goto $IF.FALSE.10           | LINE 28891
+label $WHILE.START.11          | LINE 28896
+push local 2                   | LINE 28897
+push local 0                   | LINE 28907
+push constant 1                | LINE 28917
+add                            | LINE 28924
+lt                             | LINE 28929
+push local 3                   | LINE 28941
+push local 1                   | LINE 28951
+push constant 1                | LINE 28961
+add                            | LINE 28968
+lt                             | LINE 28973
+and                            | LINE 28985
+not                            | LINE 28990
+if-goto $WHILE.END.11          | LINE 28993
+push argument 0                | LINE 28998
+push local 2                   | LINE 29008
+add                            | LINE 29018
+push argument 1                | LINE 29023
+push local 3                   | LINE 29033
+add                            | LINE 29043
+call Screen.drawPixel 2        | LINE 29048
+pop temp 0                     | LINE 29098
+push constant 0                | LINE 29108
+push local 4                   | LINE 29115
+gt                             | LINE 29125
+not                            | LINE 29137
+if-goto $IF.FALSE.12           | LINE 29140
+push local 2                   | LINE 29145
+push local 5                   | LINE 29155
+add                            | LINE 29165
+pop local 2                    | LINE 29170
+push local 4                   | LINE 29182
+push local 1                   | LINE 29192
+add                            | LINE 29202
+pop local 4                    | LINE 29207
+goto $IF.END.12                | LINE 29219
+label $IF.FALSE.12             | LINE 29221
+push local 3                   | LINE 29222
+push local 6                   | LINE 29232
+add                            | LINE 29242
+pop local 3                    | LINE 29247
+push local 4                   | LINE 29259
+push local 0                   | LINE 29269
+sub                            | LINE 29279
+pop local 4                    | LINE 29284
+label $IF.END.12               | LINE 29296
+goto $WHILE.START.11           | LINE 29297
+label $WHILE.END.11            | LINE 29299
+goto $IF.END.10                | LINE 29300
+label $IF.FALSE.10             | LINE 29302
+label $WHILE.START.13          | LINE 29303
+push local 2                   | LINE 29304
+push local 0                   | LINE 29314
+push constant 1                | LINE 29324
+add                            | LINE 29331
+lt                             | LINE 29336
+push local 3                   | LINE 29348
+push local 1                   | LINE 29358
+push constant 1                | LINE 29368
+sub                            | LINE 29375
+gt                             | LINE 29380
+and                            | LINE 29392
+not                            | LINE 29397
+if-goto $WHILE.END.13          | LINE 29400
+push argument 0                | LINE 29405
+push local 2                   | LINE 29415
+add                            | LINE 29425
+push argument 1                | LINE 29430
+push local 3                   | LINE 29440
+add                            | LINE 29450
+call Screen.drawPixel 2        | LINE 29455
+pop temp 0                     | LINE 29505
+push constant 0                | LINE 29515
+push local 4                   | LINE 29522
+lt                             | LINE 29532
+not                            | LINE 29544
+if-goto $IF.FALSE.14           | LINE 29547
+push local 2                   | LINE 29552
+push local 5                   | LINE 29562
+add                            | LINE 29572
+pop local 2                    | LINE 29577
+push local 4                   | LINE 29589
+push local 1                   | LINE 29599
+add                            | LINE 29609
+pop local 4                    | LINE 29614
+goto $IF.END.14                | LINE 29626
+label $IF.FALSE.14             | LINE 29628
+push local 3                   | LINE 29629
+push local 6                   | LINE 29639
+add                            | LINE 29649
+pop local 3                    | LINE 29654
+push local 4                   | LINE 29666
+push local 0                   | LINE 29676
+add                            | LINE 29686
+pop local 4                    | LINE 29691
+label $IF.END.14               | LINE 29703
+goto $WHILE.START.13           | LINE 29704
+label $WHILE.END.13            | LINE 29706
+label $IF.END.10               | LINE 29707
+goto $IF.END.9                 | LINE 29708
+label $IF.FALSE.9              | LINE 29710
+push local 1                   | LINE 29711
+push constant 0                | LINE 29721
+gt                             | LINE 29728
+not                            | LINE 29740
+if-goto $IF.FALSE.15           | LINE 29743
+label $WHILE.START.16          | LINE 29748
+push local 2                   | LINE 29749
+push local 0                   | LINE 29759
+push constant 1                | LINE 29769
+sub                            | LINE 29776
+gt                             | LINE 29781
+push local 3                   | LINE 29793
+push local 1                   | LINE 29803
+push constant 1                | LINE 29813
+add                            | LINE 29820
+lt                             | LINE 29825
+and                            | LINE 29837
+not                            | LINE 29842
+if-goto $WHILE.END.16          | LINE 29845
+push argument 0                | LINE 29850
+push local 2                   | LINE 29860
+add                            | LINE 29870
+push argument 1                | LINE 29875
+push local 3                   | LINE 29885
+add                            | LINE 29895
+call Screen.drawPixel 2        | LINE 29900
+pop temp 0                     | LINE 29950
+push constant 0                | LINE 29960
+push local 4                   | LINE 29967
+lt                             | LINE 29977
+not                            | LINE 29989
+if-goto $IF.FALSE.17           | LINE 29992
+push local 2                   | LINE 29997
+push local 5                   | LINE 30007
+add                            | LINE 30017
+pop local 2                    | LINE 30022
+push local 4                   | LINE 30034
+push local 1                   | LINE 30044
+sub                            | LINE 30054
+pop local 4                    | LINE 30059
+goto $IF.END.17                | LINE 30071
+label $IF.FALSE.17             | LINE 30073
+push local 3                   | LINE 30074
+push local 6                   | LINE 30084
+add                            | LINE 30094
+pop local 3                    | LINE 30099
+push local 4                   | LINE 30111
+push local 0                   | LINE 30121
+sub                            | LINE 30131
+pop local 4                    | LINE 30136
+label $IF.END.17               | LINE 30148
+goto $WHILE.START.16           | LINE 30149
+label $WHILE.END.16            | LINE 30151
+goto $IF.END.15                | LINE 30152
+label $IF.FALSE.15             | LINE 30154
+label $WHILE.START.18          | LINE 30155
+push local 2                   | LINE 30156
+push local 0                   | LINE 30166
+push constant 1                | LINE 30176
+sub                            | LINE 30183
+gt                             | LINE 30188
+push local 3                   | LINE 30200
+push local 1                   | LINE 30210
+push constant 1                | LINE 30220
+sub                            | LINE 30227
+gt                             | LINE 30232
+and                            | LINE 30244
+not                            | LINE 30249
+if-goto $WHILE.END.18          | LINE 30252
+push argument 0                | LINE 30257
+push local 2                   | LINE 30267
+add                            | LINE 30277
+push argument 1                | LINE 30282
+push local 3                   | LINE 30292
+add                            | LINE 30302
+call Screen.drawPixel 2        | LINE 30307
+pop temp 0                     | LINE 30357
+push constant 0                | LINE 30367
+push local 4                   | LINE 30374
+gt                             | LINE 30384
+not                            | LINE 30396
+if-goto $IF.FALSE.19           | LINE 30399
+push local 2                   | LINE 30404
+push local 5                   | LINE 30414
+add                            | LINE 30424
+pop local 2                    | LINE 30429
+push local 4                   | LINE 30441
+push local 1                   | LINE 30451
+sub                            | LINE 30461
+pop local 4                    | LINE 30466
+goto $IF.END.19                | LINE 30478
+label $IF.FALSE.19             | LINE 30480
+push local 3                   | LINE 30481
+push local 6                   | LINE 30491
+add                            | LINE 30501
+pop local 3                    | LINE 30506
+push local 4                   | LINE 30518
+push local 0                   | LINE 30528
+add                            | LINE 30538
+pop local 4                    | LINE 30543
+label $IF.END.19               | LINE 30555
+goto $WHILE.START.18           | LINE 30556
+label $WHILE.END.18            | LINE 30558
+label $IF.END.15               | LINE 30559
+label $IF.END.9                | LINE 30560
+push constant 0                | LINE 30561
+return                         | LINE 30568
+function Screen.drawHLine 0    | LINE 30626
+label $WHILE.START.20          | LINE 30627
+push argument 0                | LINE 30628
+push argument 1                | LINE 30638
+push constant 1                | LINE 30648
+add                            | LINE 30655
+lt                             | LINE 30660
+not                            | LINE 30672
+if-goto $WHILE.END.20          | LINE 30675
+push argument 0                | LINE 30680
+push constant 15               | LINE 30690
+and                            | LINE 30697
+not                            | LINE 30702
+push argument 0                | LINE 30705
+push argument 1                | LINE 30715
+push constant 14               | LINE 30725
+sub                            | LINE 30732
+lt                             | LINE 30737
+and                            | LINE 30749
+not                            | LINE 30754
+if-goto $IF.FALSE.21           | LINE 30757
+push static 0                  | LINE 30762
+push argument 2                | LINE 30769
+push constant 32               | LINE 30779
+call Math.multiply 2           | LINE 30786
+push argument 0                | LINE 30836
+push constant 16               | LINE 30846
+call Math.divide 2             | LINE 30853
+add                            | LINE 30903
+add                            | LINE 30908
+push static 2                  | LINE 30913
+pop temp 0                     | LINE 30920
+pop pointer 1                  | LINE 30930
+push temp 0                    | LINE 30940
+pop that 0                     | LINE 30947
+push argument 0                | LINE 30959
+push constant 16               | LINE 30969
+add                            | LINE 30976
+pop argument 0                 | LINE 30981
+goto $IF.END.21                | LINE 30993
+label $IF.FALSE.21             | LINE 30995
+push argument 0                | LINE 30996
+push argument 2                | LINE 31006
+call Screen.drawPixel 2        | LINE 31016
+pop temp 0                     | LINE 31066
+push argument 0                | LINE 31076
+push constant 1                | LINE 31086
+add                            | LINE 31093
+pop argument 0                 | LINE 31098
+label $IF.END.21               | LINE 31110
+goto $WHILE.START.20           | LINE 31111
+label $WHILE.END.20            | LINE 31113
+push constant 0                | LINE 31114
+return                         | LINE 31121
+function Screen.drawVLine 0    | LINE 31179
+label $WHILE.START.22          | LINE 31180
+push argument 1                | LINE 31181
+push argument 2                | LINE 31191
+lt                             | LINE 31201
+not                            | LINE 31213
+if-goto $WHILE.END.22          | LINE 31216
+push argument 0                | LINE 31221
+push argument 1                | LINE 31231
+call Screen.drawPixel 2        | LINE 31241
+pop temp 0                     | LINE 31291
+push argument 1                | LINE 31301
+push constant 1                | LINE 31311
+add                            | LINE 31318
+pop argument 1                 | LINE 31323
+goto $WHILE.START.22           | LINE 31335
+label $WHILE.END.22            | LINE 31337
+push constant 0                | LINE 31338
+return                         | LINE 31345
+function Screen.drawRectangle 0 | LINE 31403
+label $WHILE.START.23          | LINE 31404
+push argument 1                | LINE 31405
+push argument 3                | LINE 31415
+lt                             | LINE 31425
+not                            | LINE 31437
+if-goto $WHILE.END.23          | LINE 31440
+push argument 0                | LINE 31445
+push argument 2                | LINE 31455
+push argument 1                | LINE 31465
+call Screen.drawHLine 3        | LINE 31475
+pop temp 0                     | LINE 31525
+push argument 1                | LINE 31535
+push constant 1                | LINE 31545
+add                            | LINE 31552
+pop argument 1                 | LINE 31557
+goto $WHILE.START.23           | LINE 31569
+label $WHILE.END.23            | LINE 31571
+push constant 0                | LINE 31572
+return                         | LINE 31579
+function Screen.drawCircle 5   | LINE 31637
+push argument 2                | LINE 31655
+neg                            | LINE 31665
+pop local 0                    | LINE 31668
+label $WHILE.START.24          | LINE 31680
+push local 0                   | LINE 31681
+push argument 2                | LINE 31691
+eq                             | LINE 31701
+not                            | LINE 31713
+not                            | LINE 31716
+if-goto $WHILE.END.24          | LINE 31719
+push argument 2                | LINE 31724
+push argument 2                | LINE 31734
+call Math.multiply 2           | LINE 31744
+push local 0                   | LINE 31794
+push local 0                   | LINE 31804
+call Math.multiply 2           | LINE 31814
+sub                            | LINE 31864
+call Math.sqrt 1               | LINE 31869
+pop local 1                    | LINE 31919
+push argument 0                | LINE 31931
+push local 1                   | LINE 31941
+sub                            | LINE 31951
+pop local 2                    | LINE 31956
+push argument 0                | LINE 31968
+push local 1                   | LINE 31978
+add                            | LINE 31988
+pop local 3                    | LINE 31993
+push argument 1                | LINE 32005
+push local 0                   | LINE 32015
+add                            | LINE 32025
+pop local 4                    | LINE 32030
+push local 2                   | LINE 32042
+push local 3                   | LINE 32052
+push local 4                   | LINE 32062
+call Screen.drawHLine 3        | LINE 32072
+pop temp 0                     | LINE 32122
+push local 0                   | LINE 32132
+push constant 1                | LINE 32142
+add                            | LINE 32149
+pop local 0                    | LINE 32154
+goto $WHILE.START.24           | LINE 32166
+label $WHILE.END.24            | LINE 32168
+push constant 0                | LINE 32169
+return                         | LINE 32176
+function String.new 0          | LINE 32234
+push constant 3                | LINE 32235
+call Memory.alloc 1            | LINE 32242
+pop pointer 0                  | LINE 32292
+push argument 0                | LINE 32302
+push constant 0                | LINE 32312
+eq                             | LINE 32319
+not                            | LINE 32331
+if-goto $IF.FALSE.0            | LINE 32334
+push constant 1                | LINE 32339
+pop argument 0                 | LINE 32346
+label $IF.FALSE.0              | LINE 32358
+push constant 0                | LINE 32359
+pop this 1                     | LINE 32366
+push argument 0                | LINE 32378
+pop this 2                     | LINE 32388
+push argument 0                | LINE 32400
+call Array.new 1               | LINE 32410
+pop this 0                     | LINE 32460
+push pointer 0                 | LINE 32472
+return                         | LINE 32479
+function String.dispose 0      | LINE 32537
+push argument 0                | LINE 32538
+pop pointer 0                  | LINE 32548
+push this 0                    | LINE 32558
+call Array.dispose 1           | LINE 32568
+pop temp 0                     | LINE 32618
+push constant 0                | LINE 32628
+return                         | LINE 32635
+function String.length 0       | LINE 32693
+push argument 0                | LINE 32694
+pop pointer 0                  | LINE 32704
+push this 1                    | LINE 32714
+return                         | LINE 32724
+function String.charAt 0       | LINE 32782
+push argument 0                | LINE 32783
+pop pointer 0                  | LINE 32793
+push this 0                    | LINE 32803
+push argument 1                | LINE 32813
+add                            | LINE 32823
+pop pointer 1                  | LINE 32828
+push that 0                    | LINE 32838
+return                         | LINE 32848
+function String.setCharAt 0    | LINE 32906
+push argument 0                | LINE 32907
+pop pointer 0                  | LINE 32917
+push this 0                    | LINE 32927
+push argument 1                | LINE 32937
+add                            | LINE 32947
+push argument 2                | LINE 32952
+pop temp 0                     | LINE 32962
+pop pointer 1                  | LINE 32972
+push temp 0                    | LINE 32982
+pop that 0                     | LINE 32989
+push constant 0                | LINE 33001
+return                         | LINE 33008
+function String.appendChar 0   | LINE 33066
+push argument 0                | LINE 33067
+pop pointer 0                  | LINE 33077
+push this 1                    | LINE 33087
+push this 2                    | LINE 33097
+lt                             | LINE 33107
+not                            | LINE 33119
+if-goto $IF.FALSE.1            | LINE 33122
+push this 0                    | LINE 33127
+push this 1                    | LINE 33137
+add                            | LINE 33147
+push argument 1                | LINE 33152
+pop temp 0                     | LINE 33162
+pop pointer 1                  | LINE 33172
+push temp 0                    | LINE 33182
+pop that 0                     | LINE 33189
+push this 1                    | LINE 33201
+push constant 1                | LINE 33211
+add                            | LINE 33218
+pop this 1                     | LINE 33223
+label $IF.FALSE.1              | LINE 33235
+push pointer 0                 | LINE 33236
+return                         | LINE 33243
+function String.eraseLastChar 0 | LINE 33301
+push argument 0                | LINE 33302
+pop pointer 0                  | LINE 33312
+push this 1                    | LINE 33322
+push constant 0                | LINE 33332
+gt                             | LINE 33339
+not                            | LINE 33351
+if-goto $IF.FALSE.2            | LINE 33354
+push this 1                    | LINE 33359
+push constant 1                | LINE 33369
+sub                            | LINE 33376
+pop this 1                     | LINE 33381
+label $IF.FALSE.2              | LINE 33393
+push constant 0                | LINE 33394
+return                         | LINE 33401
+function String.intValue 3     | LINE 33459
+push argument 0                | LINE 33477
+pop pointer 0                  | LINE 33487
+push constant 0                | LINE 33497
+pop local 0                    | LINE 33504
+push this 0                    | LINE 33516
+push local 0                   | LINE 33526
+add                            | LINE 33536
+pop pointer 1                  | LINE 33541
+push that 0                    | LINE 33551
+push constant 45               | LINE 33561
+eq                             | LINE 33568
+not                            | LINE 33580
+if-goto $IF.FALSE.3            | LINE 33583
+push constant 0                | LINE 33588
+not                            | LINE 33595
+pop local 2                    | LINE 33598
+push local 0                   | LINE 33610
+push constant 1                | LINE 33620
+add                            | LINE 33627
+pop local 0                    | LINE 33632
+label $IF.FALSE.3              | LINE 33644
+label $WHILE.START.4           | LINE 33645
+push local 0                   | LINE 33646
+push this 2                    | LINE 33656
+lt                             | LINE 33666
+not                            | LINE 33678
+if-goto $WHILE.END.4           | LINE 33681
+push local 1                   | LINE 33686
+push constant 10               | LINE 33696
+call Math.multiply 2           | LINE 33703
+push this 0                    | LINE 33753
+push local 0                   | LINE 33763
+add                            | LINE 33773
+pop pointer 1                  | LINE 33778
+push that 0                    | LINE 33788
+add                            | LINE 33798
+push constant 48               | LINE 33803
+sub                            | LINE 33810
+pop local 1                    | LINE 33815
+push local 0                   | LINE 33827
+push constant 1                | LINE 33837
+add                            | LINE 33844
+pop local 0                    | LINE 33849
+goto $WHILE.START.4            | LINE 33861
+label $WHILE.END.4             | LINE 33863
+push local 2                   | LINE 33864
+not                            | LINE 33874
+if-goto $IF.FALSE.5            | LINE 33877
+push local 1                   | LINE 33882
+neg                            | LINE 33892
+pop local 1                    | LINE 33895
+label $IF.FALSE.5              | LINE 33907
+push local 1                   | LINE 33908
+return                         | LINE 33918
+function String.setInt 0       | LINE 33976
+push argument 0                | LINE 33977
+pop pointer 0                  | LINE 33987
+push constant 0                | LINE 33997
+pop this 1                     | LINE 34004
+push argument 1                | LINE 34016
+push constant 0                | LINE 34026
+lt                             | LINE 34033
+not                            | LINE 34045
+if-goto $IF.FALSE.6            | LINE 34048
+push argument 1                | LINE 34053
+neg                            | LINE 34063
+pop argument 1                 | LINE 34066
+push pointer 0                 | LINE 34078
+push constant 45               | LINE 34085
+call String.appendChar 2       | LINE 34092
+pop temp 0                     | LINE 34142
+label $IF.FALSE.6              | LINE 34152
+push pointer 0                 | LINE 34153
+push argument 1                | LINE 34160
+call String.setIntBody 2       | LINE 34170
+return                         | LINE 34220
+function String.setIntBody 1   | LINE 34278
+push argument 0                | LINE 34296
+pop pointer 0                  | LINE 34306
+push argument 1                | LINE 34316
+push argument 1                | LINE 34326
+push constant 10               | LINE 34336
+call Math.divide 2             | LINE 34343
+push constant 10               | LINE 34393
+call Math.multiply 2           | LINE 34400
+sub                            | LINE 34450
+pop local 0                    | LINE 34455
+push constant 10               | LINE 34467
+push argument 1                | LINE 34474
+gt                             | LINE 34484
+not                            | LINE 34496
+if-goto $IF.FALSE.7            | LINE 34499
+push pointer 0                 | LINE 34504
+push argument 1                | LINE 34511
+push constant 48               | LINE 34521
+add                            | LINE 34528
+call String.appendChar 2       | LINE 34533
+pop temp 0                     | LINE 34583
+goto $IF.END.7                 | LINE 34593
+label $IF.FALSE.7              | LINE 34595
+push pointer 0                 | LINE 34596
+push argument 1                | LINE 34603
+push constant 10               | LINE 34613
+call Math.divide 2             | LINE 34620
+call String.setIntBody 2       | LINE 34670
+pop temp 0                     | LINE 34720
+push pointer 0                 | LINE 34730
+push local 0                   | LINE 34737
+push constant 48               | LINE 34747
+add                            | LINE 34754
+call String.appendChar 2       | LINE 34759
+pop temp 0                     | LINE 34809
+label $IF.END.7                | LINE 34819
+push constant 0                | LINE 34820
+return                         | LINE 34827
+function String.newLine 0      | LINE 34885
+push constant 128              | LINE 34886
+return                         | LINE 34893
+function String.backSpace 0    | LINE 34951
+push constant 129              | LINE 34952
+return                         | LINE 34959
+function String.doubleQuote 0  | LINE 35017
+push constant 34               | LINE 35018
+return                         | LINE 35025
+function Sys.init 0            | LINE 35083
+call Memory.init 0             | LINE 35084
+pop temp 0                     | LINE 35134
+call Math.init 0               | LINE 35144
+pop temp 0                     | LINE 35194
+call Output.init 0             | LINE 35204
+pop temp 0                     | LINE 35254
+call Screen.init 0             | LINE 35264
+pop temp 0                     | LINE 35314
+call Keyboard.init 0           | LINE 35324
+pop temp 0                     | LINE 35374
+call Main.main 0               | LINE 35384
+pop temp 0                     | LINE 35434
+call Sys.halt 0                | LINE 35444
+pop temp 0                     | LINE 35494
+push constant 0                | LINE 35504
+return                         | LINE 35511
+function Sys.halt 0            | LINE 35569
+push constant 5                | LINE 35570
+call Output.printInt 1         | LINE 35577
+pop temp 0                     | LINE 35627
+label $WHILE.START.0           | LINE 35637
+push constant 0                | LINE 35638
+not                            | LINE 35645
+not                            | LINE 35648
+if-goto $WHILE.END.0           | LINE 35651
+goto $WHILE.START.0            | LINE 35656
+label $WHILE.END.0             | LINE 35658
+push constant 0                | LINE 35659
+return                         | LINE 35666
+function Sys.wait 1            | LINE 35724
+label $WHILE.START.1           | LINE 35742
+push argument 0                | LINE 35743
+push constant 0                | LINE 35753
+gt                             | LINE 35760
+not                            | LINE 35772
+if-goto $WHILE.END.1           | LINE 35775
+push constant 40               | LINE 35780
+pop local 0                    | LINE 35787
+label $WHILE.START.2           | LINE 35799
+push local 0                   | LINE 35800
+push constant 0                | LINE 35810
+gt                             | LINE 35817
+not                            | LINE 35829
+if-goto $WHILE.END.2           | LINE 35832
+push local 0                   | LINE 35837
+push constant 1                | LINE 35847
+sub                            | LINE 35854
+pop local 0                    | LINE 35859
+goto $WHILE.START.2            | LINE 35871
+label $WHILE.END.2             | LINE 35873
+push argument 0                | LINE 35874
+push constant 1                | LINE 35884
+sub                            | LINE 35891
+pop argument 0                 | LINE 35896
+goto $WHILE.START.1            | LINE 35908
+label $WHILE.END.1             | LINE 35910
+push constant 0                | LINE 35911
+return                         | LINE 35918
+function Sys.error 0           | LINE 35976
+push constant 3                | LINE 35977
+call String.new 1              | LINE 35984
+push constant 69               | LINE 36034
+call String.appendChar 2       | LINE 36041
+push constant 114              | LINE 36091
+call String.appendChar 2       | LINE 36098
+push constant 114              | LINE 36148
+call String.appendChar 2       | LINE 36155
+call Output.printString 1      | LINE 36205
+pop temp 0                     | LINE 36255
+push argument 0                | LINE 36265
+call Output.printInt 1         | LINE 36275
+pop temp 0                     | LINE 36325
+call Sys.halt 0                | LINE 36335
+pop temp 0                     | LINE 36385
+push constant 0                | LINE 36395
+return                         | LINE 36402
