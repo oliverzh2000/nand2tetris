@@ -59,13 +59,10 @@ class Screen {
 
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
-        var int address, value, i, j;
+        var int address, value, i;
 
-        // More efficient but uglier way to compute i = x / 16;
         let i = 0;
-        let j = 0;
-        while (j < (x + 1)) {
-            let j = j + 16;
+        while ((i + i + i + i + i + i + i + i + i + i + i + i + i + i + i + i) < (x + 1)) {
             let i = i + 1;
         }
         let address = i - 1 + (y * 32);
@@ -156,10 +153,21 @@ class Screen {
         return;
     }
 
+    function int mod(int x, int y) {
+        return x - ((x / y) * y);
+    }
+
+    function int divisible(int x, int y) {
+        if ((x - ((x / y) * y)) = 0) {
+            return true;
+        }
+        return false;
+    }
+
     function void drawHLine(int x1, int x2, int y) {
         while (x1 < (x2 + 1)) {
             if (~(x1 & 15) & (x1 < (x2 - 14))) {
-                let screen[y * 32 + (x1 / 16)] = color;
+                let screen[(y * 32) + (x1 / 16)] = color;
                 let x1 = x1 + 16;
             } else {
                 do Screen.drawPixel(x1, y);
@@ -200,6 +208,44 @@ class Screen {
           do Screen.drawHLine(x1, x2, y);
           let dy = dy + 1;
         }
+        return;
+    }
+
+    function void drawHLineMasks(int x1, int x2, int y) {
+        var int x_bit, x_word;
+
+        let x_bit = 0;
+        let x_word = 0;
+        // Efficient way to compute x_word = x1 / 16.
+        while (x_bit < (x1 - (x1 & 15))) {
+            let x_bit = x_bit + 16;
+            let x_word = x_word + 1;
+        }
+        if ((x2 - x1) < 17) {
+            let screen[(y * 32) + x_word] = screen[(y * 32) + x_word] | (masks[x2 & 15] - masks[x1 & 15]);
+            return;
+        }
+        let screen[(y * 32) + x_word] = screen[(y * 32) + x_word] | (-masks[x1 & 15]);
+        let x_bit = x_bit + 16;
+        let x_word = x_word + 1;
+        while (x_bit < (x2 - (x2 & 15))) {
+            let screen[(y * 32) + x_word] = screen[(y * 32) + x_word] | (-1);
+            let x_bit = x_bit + 16;
+            let x_word = x_word + 1;
+        }
+        let screen[(y * 32) + x_word] = screen[(y * 32) + x_word] | (masks[x2 & 15] - 1);
+        return;
+    }
+
+    function void bitch() {
+        var int i;
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(0, 0, 511, 255);
+        do Screen.clearScreen();
+        let screen[5] = -1;
+        // let screen[2] = -masks[5];
+        // do Screen.drawHLineMasks(37, 130, 5);
         return;
     }
 }
