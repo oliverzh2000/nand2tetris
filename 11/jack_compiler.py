@@ -311,7 +311,7 @@ class Compiler:
             self.add_VM(self.KEYWORD_CONST[self.tokens.next().value])
         elif self.tokens.peek().type == "symbol" and self.tokens.peek().value in self.UNARY_OP:
             unary_op = self.UNARY_OP[self.tokens.next().value]
-            self.compile_term()
+            self.compile_term()         
             self.add_VM(unary_op)
         elif self.tokens.peek() == ("symbol", "("):  # '(' expression ')'.
             self.tokens.next()  # '('
